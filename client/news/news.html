@@ -1,0 +1,38 @@
+<template name="createNewsPage">
+    {{> header }}
+    <h1>ADD NEWS</h1>
+    <a href="/project/{{projectId}}"> Come back to Project page </a>
+    {{> quickForm collection="News" id="insertNewsForm" type="insert"}}
+</template>
+
+<template name="editNewsPage">
+    {{> header }}
+    <h1>EDIT NEWS</h1>
+    <a href="/project/{{news.projectId}}"> Come back to Project page </a>
+    {{> quickForm collection="News" doc=news id="editNewsForm" type="update"}}
+    {{#quickRemoveButton collection="News" _id=news._id beforeRemove=beforeNewsRemove  class="btn btn-danger"}}Delete News{{/quickRemoveButton}}
+</template>
+
+<template name="newsBlock">
+    <li class="news">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+            <ul>
+            {{#each pictures}}
+                {{> pictureNewsBlock}}
+            {{/each}}
+        </ul>
+        {{#if isNewsCreator}}
+            <a href="/news/{{_id}}/edit">Edit News</a>
+        {{/if}}
+    </li>
+</template>
+
+<template name="pictureNewsBlock">
+    <img src="{{ picture.url }}" height="100"/>
+    <p>description : {{ pictureDescription }}</p>
+</template>
+
+
+
+
