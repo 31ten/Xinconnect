@@ -7,8 +7,15 @@ Meteor.publish("projects/get/all", function () {
 Meteor.publish("projects/get/one", function (id) {
     return Projects.find({_id: id});
 });
-Meteor.publish("users/get/allNames", function () {
-    return Meteor.users.find({},{fields:{username:1}});
+Meteor.publish("users/get/all/overview", function () {
+    return Meteor.users.find({},{
+        fields:
+        {
+            _id:1,
+            username:1,
+            createdAt:1
+        }
+    });
 });
 Meteor.publish("news/get/all", function () {
     return News.find();

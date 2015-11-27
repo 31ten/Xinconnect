@@ -56,10 +56,17 @@ FlowRouter.route('/news/:id/edit', {
     }
 });
 
-FlowRouter.route('/profile', {
+FlowRouter.route('/profile/:id', {
     name: 'profile',
     action: function() {
         BlazeLayout.render("profilePage");
+    }
+});
+
+FlowRouter.route('/profile/:id/edit', {
+    name: 'editProfilePage',
+    action: function() {
+        BlazeLayout.render("editProfilePage");
     }
 });
 

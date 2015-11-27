@@ -119,3 +119,79 @@ News.attachSchema(new SimpleSchema({
     }
 }));
 
+
+var userProfileSchema = new SimpleSchema({
+    firstName : {
+        type : String,
+        max : 100,
+        defaultValue : '',
+        label: "firstName"
+    },
+    lastName : {
+        type : String,
+        max : 100,
+        defaultValue : '',
+        label: "lastName"
+    },
+    email : {
+        type : String,
+        regEx : SimpleSchema.RegEx.Email,
+        optional : true,
+        label: "email"
+    },
+    bio : {
+        type : String,
+        max : 100,
+        defaultValue : '',
+        optional : true,
+        label: "bio"
+    }
+
+});
+
+var userSchema = new SimpleSchema({
+    username: {
+        type: String,
+        optional: true
+    },
+    emails: {
+        type: Array,
+        optional: true
+    },
+    "emails.$": {
+        type: Object
+    },
+    "emails.$.address": {
+        type: String,
+        regEx: SimpleSchema.RegEx.Email
+    },
+    "emails.$.verified": {
+        type: Boolean
+    },
+    createdAt: {
+        type: Date,
+        optional: true
+    },
+    profile: {
+        type: userProfileSchema,
+        optional: true
+    },
+    services: {
+        type: Object,
+        optional: true,
+        blackbox: true
+    },
+    roles: {
+        type: Object,
+        optional: true,
+        blackbox: true
+    },
+    roles: {
+        type: [String],
+        optional: true
+    }
+});
+
+Meteor.users.attachSchema(userSchema);
+
+
