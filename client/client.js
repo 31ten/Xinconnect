@@ -14,7 +14,7 @@ Template.registerHelper("menu", function (param2) {
         "projects":  FlowRouter.path("projects"),
         "members":  FlowRouter.path("members"),
         "createProject":  FlowRouter.path("create/project"),
-        "profile":  FlowRouter.path("profile")
+        "profile":  "/profile/"+Meteor.userId()
     }
     return menu;
 });

@@ -1,0 +1,21 @@
+<template name="profilePage">
+    {{> header }}
+    <h1>PROFILE PAGE</h1>
+    <p>Id : {{user._id}}</p>
+    <p>Username : {{user.username}}</p>
+    <p>Email : {{user.email}}</p>
+    <p>Created At : {{user.createdAt}}</p>
+    {{#if isCurrentUser}}
+        <a href="/profile/{{user._id}}/edit">Edit your profile</a>
+    {{/if}}
+</template>
+
+<template name="editProfilePage">
+    {{> header }}
+    <h1>EDIT PROFILE PAGE</h1>
+
+    {{#autoForm collection="Meteor.users" doc=user id="editProfileForm" type="update"}}
+        {{> afObjectField name='profile'}}
+        <button type="submit" class="btn btn-primary">Update</button>
+    {{/autoForm}}
+</template>

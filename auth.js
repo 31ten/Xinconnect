@@ -46,4 +46,15 @@ News.allow({
     }
 });
 
-
+Meteor.users.allow({
+    'insert':function(userId, doc){
+        if(userId == doc._id){
+            return true
+        }
+    },
+    'update':function(userId, doc){
+        if(userId == doc._id){
+            return true
+        }
+    }
+});

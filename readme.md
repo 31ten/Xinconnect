@@ -1,7 +1,7 @@
 # INTRODUCTION
 
 A Social Network dedicated to Hackerspace. A Mix between Meetup, Github and Instructable
-Done with MeteorJS
+Done with MeteorJS & Material Lite Design 
 
 Design : Andrea Carlon
 Development : Gregoire THIEBAULT
@@ -16,11 +16,13 @@ Development : Gregoire THIEBAULT
 - [X] News edition when user created
 - [X] Delete project if owner
 - [X] Delete news if owner
-- [ ] Homepage aggregate latest news + new member
+- [X] Listing members page
+- [X] Profile edition page
+- [X] Profile page with informations user
+- [ ] Homepage aggregate latest news 
+- [ ] Homepage aggregate new project
+- [ ] Homepage aggregate new member
 - [ ] Join/Leave a project
-- [ ] Profile page with informations user
-- [ ] Listing members page
-- [ ] Profile edition page
 
 ### DESIGN
 
