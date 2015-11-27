@@ -1,0 +1,47 @@
+<template name="projectPage">
+    {{> header }}
+
+    <h1>{{project.title}}</h1>
+
+    <img height="200" src="{{illustration.url}}"/>
+
+    <p>{{project.description}}</p>
+
+    <h3>PICTURES</h3>
+    <ul>
+        {{#each project.pictures}}
+            {{> pictureProjectBlock}}
+        {{/each}}
+    </ul>
+
+    {{#if isProjectCreator}}
+        <h3>Administration</h3>
+        <a href="/project/{{project._id}}/edit">Edit</a>
+    {{/if}}
+
+    <h3>NEWS</h3>
+    <ul>
+        {{#each newsList}}
+            {{> newsBlock}}
+        {{/each}}
+    </ul>
+    <a href="/create/news/{{project._id}}">Create news</a>
+</template>
+
+<template name="pictureProjectBlock">
+    <img src="{{ picture.url }}" height="100"/>
+    <p>description : {{ pictureDescription }}</p>
+</template>
+
+<template name="createProjectPage">
+    {{> header }}
+    <h1>ADD PROJECT</h1>
+    {{> quickForm collection="Projects" id="insertProjectForm" type="insert"}}
+</template>
+
+<template name="editProjectPage">
+    {{> header }}
+    <h1>EDIT PROJECT</h1>
+    {{> quickForm collection="Projects" doc=project id="editProjectForm" type="update"}}
+    {{#quickRemoveButton collection="Projects" _id=project._id beforeRemove=beforeProjectRemove  class="btn btn-danger"}}Delete Project{{/quickRemoveButton}}
+</template>

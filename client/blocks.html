@@ -1,0 +1,26 @@
+<!-- GLOBAL BLOCKS -->
+<template name="header">
+    {{> loginButtons}}
+    <br>
+    <a href="{{ menu.home }}">home</a>
+    <a href="{{ menu.projects }}">projects</a>
+    <a href="{{ menu.members }}">members</a>
+    {{#if currentUser}}
+    <a href="{{ menu.createProject }}">Create a Project</a>
+    <a href="{{ menu.profile }}">Profile</a>
+    {{/if}}
+    <br>
+</template>
+
+
+<!-- MEMBERS PAGE BLOCK -->
+<template name="userBlock">
+    <li>{{username}}</li>
+</template>
+
+<!-- LOADING -->
+<template name="loading">
+    {{> header }}
+    FUKIN LOADINNNN.....
+
+</template>

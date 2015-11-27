@@ -1,0 +1,21 @@
+<template name="projectsPage">
+    {{> header }}
+    <h1>PROJECTS</h1>
+    <ul>
+        {{#each projects}}
+            {{> projectBlock}}
+        {{/each}}
+    </ul>
+</template>
+
+<!-- PROJECT PAGE BLOCK -->
+<template name="projectBlock">
+    <li class="project">
+        <a href="/project/{{_id}}">
+            <img height="200"  src="{{illustration.url}}"/>
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+            <span class="text"><strong>{{username}}</strong></span>
+        </a>
+    </li>
+</template>
