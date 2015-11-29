@@ -18,8 +18,6 @@ Template.homePage.onCreated(function() {
 
 Template.homePage.helpers({
     homeUpdates : function () {
-        var projectId = FlowRouter.getParam('id');
-
         var news = News.find().fetch();
         for (i = 0; i < news.length; ++i){
             news[i].type = "news";
@@ -46,9 +44,6 @@ Template.homePage.helpers({
         }
 
         result.sort(compare);
-        console.log(result);
-
         return result;
-        //return newsList;
     }
 });
