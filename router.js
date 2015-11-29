@@ -63,6 +63,7 @@ FlowRouter.route('/profile/:id', {
     }
 });
 
+
 FlowRouter.route('/profile/:id/edit', {
     name: 'editProfilePage',
     action: function() {
@@ -70,4 +71,11 @@ FlowRouter.route('/profile/:id/edit', {
     }
 });
 
+
+FlowRouter.route('/mdl', {
+    name: 'mdl',
+    action: function() {
+        BlazeLayout.render("mdl");
+    }
+});
 //FS.debug = true;

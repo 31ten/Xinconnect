@@ -100,10 +100,11 @@ standard-minifiers@1.0.2
 templating@1.1.5
 templating-tools@1.0.0
 tracker@1.0.9
-twbs:bootstrap@3.3.5
+twbs:bootstrap@3.3.6
 ui@1.0.8
 underscore@1.0.4
 url@1.0.5
 webapp@1.2.3
 webapp-hashing@1.0.5
 yogiben:autoform-file@0.3.0
+zodiase:mdl@1.0.6_1
