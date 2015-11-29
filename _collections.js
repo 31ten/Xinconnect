@@ -17,15 +17,20 @@ Projects.attachSchema(new SimpleSchema({
     title: {
         type: String,
         label: "title",
-        max:50
+        max:1000
     },
     description: {
         type: String,
         label: "description",
-        max:2500
+        max:2500,
+        autoform: {
+            type: "textarea",
+            rows: 6
+        }
     },
     pictures: {
         type: [Object],
+        optional : true,
         minCount: 1,
         maxCount: 6
     },
@@ -40,7 +45,8 @@ Projects.attachSchema(new SimpleSchema({
         }
     },
     "pictures.$.pictureDescription": {
-        type: String
+        type: String,
+        optional: true
     },
     createdBy: {
         type: String,
@@ -51,7 +57,7 @@ Projects.attachSchema(new SimpleSchema({
         },
         autoValue:function(){ return this.userId }
     },
-    created: {
+    createdAt: {
         type: Number,
         autoform: {
             type: "hidden",
@@ -66,15 +72,20 @@ News.attachSchema(new SimpleSchema({
     title: {
         type: String,
         label: "title",
-        max:50
+        max:1000
     },
     description: {
         type: String,
         label: "description",
-        max:2500
+        max:2500,
+        autoform: {
+            type: "textarea",
+            rows: 6
+        }
     },
     pictures: {
         type: [Object],
+        optional : true,
         minCount: 1,
         maxCount: 6
     },
@@ -89,7 +100,8 @@ News.attachSchema(new SimpleSchema({
         }
     },
     "pictures.$.pictureDescription": {
-        type: String
+        type: String,
+        optional: true
     },
     createdBy: {
         type: String,
@@ -109,7 +121,7 @@ News.attachSchema(new SimpleSchema({
         },
         defaultValue: ""
     },
-    created: {
+    createdAt: {
         type: Number,
         autoform: {
             type: "hidden",
@@ -140,9 +152,12 @@ var userProfileSchema = new SimpleSchema({
         label: "email"
     },
     bio : {
-        type : String,
-        max : 100,
-        defaultValue : '',
+        type: String,
+        max:2500,
+        autoform: {
+            type: "textarea",
+            rows: 6
+        },
         optional : true,
         label: "bio"
     }
@@ -169,8 +184,13 @@ var userSchema = new SimpleSchema({
         type: Boolean
     },
     createdAt: {
-        type: Date,
-        optional: true
+        type: Number,
+        autoform: {
+            type: "hidden",
+            label: false
+        },
+        optional: true,
+        autoValue:function(){ return Date.now() }
     },
     profile: {
         type: userProfileSchema,

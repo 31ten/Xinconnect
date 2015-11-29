@@ -3,7 +3,10 @@
     <h1>PROFILE PAGE</h1>
     <p>Id : {{user._id}}</p>
     <p>Username : {{user.username}}</p>
-    <p>Email : {{user.email}}</p>
+    <p>First Name : {{user.profile.firstName}}</p>
+    <p>Last Name : {{user.profile.lastName}}</p>
+    <p>Email : {{user.profile.email}}</p>
+    <p class="pre">Bio : {{user.profile.bio}}</p>
     <p>Created At : {{user.createdAt}}</p>
     {{#if isCurrentUser}}
         <a href="/profile/{{user._id}}/edit">Edit your profile</a>

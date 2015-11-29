@@ -72,15 +72,19 @@ AutoForm.hooks({
     insertProjectForm: {
         after: {
             insert: function (insertDoc, updateDoc, currentDoc) {
-               FlowRouter.go("/project/"+updateDoc);
+                if(updateDoc) {
+                    FlowRouter.go("/project/"+updateDoc);
+                }
             }
         }
     },
     editProjectForm: {
         after: {
             update: function (insertDoc, updateDoc, currentDoc) {
-               var projectId = FlowRouter.getParam('id');
-               FlowRouter.go("/project/"+projectId);
+                if(updateDoc) {
+                    var projectId = FlowRouter.getParam('id');
+                    FlowRouter.go("/project/" + projectId);
+                }
             }
         }
     }
