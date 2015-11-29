@@ -1,4 +1,18 @@
 <template name="homePage">
     {{> header }}
     <h1>HOME</h1>
+    <ul>
+        {{#each homeUpdates}}
+            {{> homeUpdatesBlock }}
+        {{/each}}
+    </ul>
+</template>
+
+<template name="homeUpdatesBlock">
+    <li>
+        {{ type }}
+        {{ _id }}
+        {{ title }}
+        {{ createdAt }}
+    </li>
 </template>

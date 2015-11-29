@@ -1,1 +1,4 @@
 /* CSS declarations go here */
+.pre {
+  white-space: pre;
+}

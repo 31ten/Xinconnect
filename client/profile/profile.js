@@ -42,5 +42,19 @@ Template.editProfilePage.helpers({
         var userId = FlowRouter.getParam('id');
         var selector = {_id:  userId};
         return Meteor.users.findOne(selector);
-    },
+    }
 });
+
+AutoForm.hooks({
+    editProfileForm: {
+        after: {
+            update: function (insertDoc, updateDoc, currentDoc) {
+                if(updateDoc) {
+                    var profileId = FlowRouter.getParam('id');
+                    FlowRouter.go("/profile/" + profileId);
+                }
+            }
+        }
+    }
+});
+
