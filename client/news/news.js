@@ -59,7 +59,9 @@ AutoForm.hooks({
         },
         after: {
             insert: function (insertDoc, updateDoc, currentDoc) {
-                FlowRouter.go("/project/"+Session.get("newsProjectId"));
+                if(updateDoc){
+                    FlowRouter.go("/project/"+Session.get("newsProjectId"));
+                }
             }
         }
     },
@@ -72,7 +74,9 @@ AutoForm.hooks({
         },
         after: {
             update: function (insertDoc, updateDoc, currentDoc) {
-                FlowRouter.go("/project/"+Session.get("newsProjectId"));
+                if(updateDoc){
+                    FlowRouter.go("/project/"+Session.get("newsProjectId"));
+                }
             }
         }
     }

@@ -19,9 +19,9 @@ Development : Gregoire THIEBAULT
 - [X] Listing members page
 - [X] Profile edition page
 - [X] Profile page with informations user
-- [ ] Homepage aggregate latest news 
-- [ ] Homepage aggregate new project
-- [ ] Homepage aggregate new member
+- [X] Homepage aggregate latest news 
+- [X] Homepage aggregate new project
+- [X] Homepage aggregate new member
 - [ ] Join/Leave a project
 
 ### DESIGN
@@ -30,4 +30,4 @@ Development : Gregoire THIEBAULT
 
 ### OTHER
 
-- [ ] Create a bitbucket
+- [X] Create a github

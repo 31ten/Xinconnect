@@ -7,7 +7,7 @@ Template.projectsPage.onCreated(function() {
 
 Template.projectsPage.helpers({
     projects: function () {
-        var projects = Projects.find({}, {sort: {created: -1}});
+        var projects = Projects.find({}, {sort: {createdAt: -1}});
         return projects;
     }
 });
