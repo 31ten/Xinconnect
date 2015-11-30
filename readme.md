@@ -23,7 +23,7 @@ Development : Gregoire THIEBAULT
 - [X] Homepage aggregate new project
 - [X] Homepage aggregate new member
 - [X] [USER] Creating a profile picture
-- [ ] [PROJECT] Do nothing when the project is updated
+- [x] [PROJECT] Dont update the CreatedAt when a project field is updated
 - [ ] [HOMEPAGE] Outputing image fields in the listing
 - [ ] [HOMEPAGE] MDL design templating
 - [ ] [PROJECT] MDL design templating

@@ -63,7 +63,7 @@ Projects.attachSchema(new SimpleSchema({
             type: "hidden",
             label: false
         },
-        autoValue:function(){ return Date.now() }
+        defaultValue:function(){ return Date.now() }
     }
 }));
 
@@ -127,7 +127,7 @@ News.attachSchema(new SimpleSchema({
             type: "hidden",
             label: false
         },
-        autoValue:function(){ return Date.now() }
+        defaultValue:function(){ return Date.now() }
     }
 }));
 
@@ -199,7 +199,7 @@ var userSchema = new SimpleSchema({
             label: false
         },
         optional: true,
-        autoValue:function(){ return Date.now() }
+        defaultValue:function(){ return Date.now() }
     },
     profile: {
         type: userProfileSchema,
