@@ -160,8 +160,17 @@ var userProfileSchema = new SimpleSchema({
         },
         optional : true,
         label: "bio"
+    },
+    avatar: {
+        type: String,
+        autoform: {
+            afFieldInput: {
+                type: 'fileUpload',
+                collection: 'Images',
+                label: 'Upload your avatar'
+            }
+        }
     }
-
 });
 
 var userSchema = new SimpleSchema({

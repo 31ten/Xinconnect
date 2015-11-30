@@ -22,7 +22,16 @@ Development : Gregoire THIEBAULT
 - [X] Homepage aggregate latest news 
 - [X] Homepage aggregate new project
 - [X] Homepage aggregate new member
-- [ ] Join/Leave a project
+- [X] [USER] Creating a profile picture
+- [ ] [PROJECT] Do nothing when the project is updated
+- [ ] [HOMEPAGE] Outputing image fields in the listing
+- [ ] [HOMEPAGE] MDL design templating
+- [ ] [PROJECT] MDL design templating
+- [ ] [PEOPLE] Get projects + News from creation date and create the update
+- [ ] [PEOPLE] MDL design templating
+- [ ] [PROJECT] MDL design templating
+- [ ] [PROJECT] Join/Leave a project
+- [ ] [PROFILE] Get all the project + news + join updates of the user
 
 ### DESIGN
 

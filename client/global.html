@@ -1,3 +1,88 @@
-<head>
-  <title>xinconnect2</title>
-</head>
+<template name="layout1">
+    <div class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color--grey-100 mdl-color-text--grey-700">
+            {{> header}}
+            <main class="mdl-layout__content">
+                {{> Template.dynamic template=main}}
+                {{> footer}}
+            </main>
+        </div>
+    </div>
+</template>
+
+<template name="header">
+    <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+            <h3>Name &amp; Title</h3>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+            <a href="{{ menu.home }}" class="menu-item rippled mdl-js-ripple-effect is-active">
+                <span class="mdl-ripple"></span>
+                home
+            </a>
+            <a href="{{ menu.projects }}" class="menu-item">projects</a>
+            <a href="{{ menu.members }}" class="menu-item">members</a>
+            {{#if currentUser}}
+            <a href="{{ menu.createProject }}" class="menu-item">Create a Project</a>
+            <a href="{{ menu.profile }}" class="menu-item">Profile</a>
+            {{/if}}
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
+                <i class="material-icons" role="presentation">add</i>
+                <span class="visuallyhidden">Add</span>
+            </button>
+        </div>
+    </header>
+    {{> loginButtons}}
+</template>
+
+<template name="footer">
+    <footer class="mdl-mega-footer">
+        <div class="mdl-mega-footer--middle-section">
+            <div class="mdl-mega-footer--drop-down-section">
+                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer--heading">Features</h1>
+                <ul class="mdl-mega-footer--link-list">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Updates</a></li>
+                </ul>
+            </div>
+            <div class="mdl-mega-footer--drop-down-section">
+                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer--heading">Details</h1>
+                <ul class="mdl-mega-footer--link-list">
+
+                </ul>
+            </div>
+            <div class="mdl-mega-footer--drop-down-section">
+                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer--heading">Technology</h1>
+                <ul class="mdl-mega-footer--link-list">
+
+                </ul>
+            </div>
+            <div class="mdl-mega-footer--drop-down-section">
+                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer--heading">FAQ</h1>
+                <ul class="mdl-mega-footer--link-list">
+
+                </ul>
+            </div>
+        </div>
+        <div class="mdl-mega-footer--bottom-section">
+            <div class="mdl-logo">
+                More Information
+            </div>
+            <ul class="mdl-mega-footer--link-list">
+                <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Privacy and Terms</a></li>
+            </ul>
+        </div>
+    </footer>
+</template>

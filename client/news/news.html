@@ -1,12 +1,10 @@
 <template name="createNewsPage">
-    {{> header }}
     <h1>ADD NEWS</h1>
     <a href="/project/{{projectId}}"> Come back to Project page </a>
     {{> quickForm collection="News" id="insertNewsForm" type="insert"}}
 </template>
 
 <template name="editNewsPage">
-    {{> header }}
     <h1>EDIT NEWS</h1>
     <a href="/project/{{news.projectId}}"> Come back to Project page </a>
     {{> quickForm collection="News" doc=news id="editNewsForm" type="update"}}

@@ -25,6 +25,5 @@ cfs:standard-packages
 cfs:gridfs
 aldeed:autoform
 yogiben:autoform-file
-twbs:bootstrap
 aldeed:delete-button
 zodiase:mdl

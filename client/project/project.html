@@ -1,6 +1,4 @@
 <template name="projectPage">
-    {{> header }}
-
     <h1>{{project.title}}</h1>
 
     <img height="200" src="{{illustration.url}}"/>
@@ -34,13 +32,11 @@
 </template>
 
 <template name="createProjectPage">
-    {{> header }}
     <h1>ADD PROJECT</h1>
     {{> quickForm collection="Projects" id="insertProjectForm" type="insert"}}
 </template>
 
 <template name="editProjectPage">
-    {{> header }}
     <h1>EDIT PROJECT</h1>
     {{> quickForm collection="Projects" doc=project id="editProjectForm" type="update"}}
     {{#quickRemoveButton collection="Projects" _id=project._id beforeRemove=beforeProjectRemove  class="btn btn-danger"}}Delete Project{{/quickRemoveButton}}

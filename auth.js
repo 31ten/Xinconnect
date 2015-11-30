@@ -12,7 +12,7 @@ Images.allow({
 
 Projects.allow({
     'insert':function(userId, doc){
-        if(userId == doc.createdBy){
+        if(userId){
             return true
         }
     },

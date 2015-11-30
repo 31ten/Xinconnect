@@ -1,7 +1,7 @@
 <template name="profilePage">
-    {{> header }}
     <h1>PROFILE PAGE</h1>
     <p>Id : {{user._id}}</p>
+    <p>avatar : <img src="{{avatar.url}}"/></p>
     <p>Username : {{user.username}}</p>
     <p>First Name : {{user.profile.firstName}}</p>
     <p>Last Name : {{user.profile.lastName}}</p>
@@ -14,7 +14,6 @@
 </template>
 
 <template name="editProfilePage">
-    {{> header }}
     <h1>EDIT PROFILE PAGE</h1>
 
     {{#autoForm collection="Meteor.users" doc=user id="editProfileForm" type="update"}}

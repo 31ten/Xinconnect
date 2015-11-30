@@ -1,11 +1,19 @@
 <template name="homePage">
-    {{> header }}
-    <h1>HOME</h1>
-    <ul>
-        {{#each homeUpdates}}
+    <div class="mdl-tabs__panel is-active" id="tab1">
+        <h1>HOME</h1>
+        <ul>
+            {{#each homeUpdates}}
             {{> homeUpdatesBlock }}
-        {{/each}}
-    </ul>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="mdl-tabs__panel is-active" id="tab2">
+        <p>second tab's content.</p>
+    </div>
+    <div class="mdl-tabs__panel is-active" id="tab3">
+        <p>thirs tab's content.</p>
+    </div>
+
 </template>
 
 <template name="homeUpdatesBlock">
