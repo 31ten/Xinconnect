@@ -26,6 +26,8 @@ Development : Gregoire THIEBAULT
 - [x] [PROJECT] Dont update the CreatedAt when a project field is updated
 - [X] [HOMEPAGE] Outputing image fields in the listing
 - [ ] [HOMEPAGE] MDL design templating
+- [ ] [MENU] Menu as a sidebar
+- [ ] [LOGIN/SINGUP] on a separated page, redirect to the profile when logged
 - [ ] [PROJECT] MDL design templating
 - [ ] [PEOPLE] Get projects + News from creation date and create the update
 - [ ] [PEOPLE] MDL design templating

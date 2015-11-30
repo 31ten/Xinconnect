@@ -3,7 +3,11 @@
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color--grey-100 mdl-color-text--grey-700">
             {{> header}}
             <main class="mdl-layout__content">
-                {{> Template.dynamic template=main}}
+                {{#if Template.subscriptionsReady}}
+                    {{> Template.dynamic template=main}}
+                {{else}}
+                    {{> loading}}
+                {{/if}}
                 {{> footer}}
             </main>
         </div>
@@ -11,31 +15,48 @@
 </template>
 
 <template name="header">
-    <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-            <h3>Name &amp; Title</h3>
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-        </div>
-        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-            <a href="{{ menu.home }}" class="menu-item rippled mdl-js-ripple-effect is-active">
-                <span class="mdl-ripple"></span>
-                home
-            </a>
-            <a href="{{ menu.projects }}" class="menu-item">projects</a>
-            <a href="{{ menu.members }}" class="menu-item">members</a>
-            {{#if currentUser}}
-            <a href="{{ menu.createProject }}" class="menu-item">Create a Project</a>
-            <a href="{{ menu.profile }}" class="menu-item">Profile</a>
-            {{/if}}
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
-                <i class="material-icons" role="presentation">add</i>
-                <span class="visuallyhidden">Add</span>
-            </button>
-        </div>
-    </header>
+    <!-- Uses a header that scrolls with the text, rather than staying
+  locked at the top -->
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--scroll">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+          <a href="{{ menu.home }}" class="mdl-navigation__link">home</a>
+          <a href="{{ menu.projects }}" class="mdl-navigation__link">projects</a>
+          <a href="{{ menu.members }}" class="mdl-navigation__link">members</a>
+          {{#if currentUser}}
+          <a href="{{ menu.createProject }}" class="mdl-navigation__link">Create a Project</a>
+          <a href="{{ menu.profile }}" class="mdl-navigation__link">Profile</a>
+          {{else}}
+          <a href="{{ menu.login }}" class="mdl-navigation__link">login</a>
+          {{/if}}
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+        <a href="{{ menu.home }}" class="mdl-navigation__link">home</a>
+        <a href="{{ menu.projects }}" class="mdl-navigation__link">projects</a>
+        <a href="{{ menu.members }}" class="mdl-navigation__link">members</a>
+        {{#if currentUser}}
+        <a href="{{ menu.createProject }}" class="mdl-navigation__link">Create a Project</a>
+        <a href="{{ menu.profile }}" class="mdl-navigation__link">Profile</a>
+        {{else}}
+        <a href="{{ menu.login }}" class="mdl-navigation__link">login</a>
+        {{/if}}
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here --></div>
+  </main>
+</div>
+
     {{> loginButtons}}
 </template>
 
