@@ -42,8 +42,17 @@ Template.homePage.helpers({
                 return -1;
             return 0;
         }
-
         result.sort(compare);
         return result;
+    }
+});
+
+Template.homeUpdatesBlock.helpers({
+    userAvatar : function () {
+        var userId = this.createdBy;
+        var selector = {_id:  userId};
+        var user = Meteor.users.findOne(selector);
+        var pictureObj = Images.findOne({_id: user.profile.avatar});
+        return pictureObj;
     }
 });

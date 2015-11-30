@@ -24,7 +24,7 @@ Template.profilePage.helpers({
         if(Meteor.userId() == pageUserId){
             return true;
         }
-    },
+    }
 });
 
 Template.editProfilePage.helpers({

@@ -13,6 +13,7 @@ Meteor.publish("users/get/all/overview", function () {
         {
             _id:1,
             username:1,
+            profile:1,
             createdAt:1
         }
     });

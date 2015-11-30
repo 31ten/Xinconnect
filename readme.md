@@ -24,7 +24,7 @@ Development : Gregoire THIEBAULT
 - [X] Homepage aggregate new member
 - [X] [USER] Creating a profile picture
 - [x] [PROJECT] Dont update the CreatedAt when a project field is updated
-- [ ] [HOMEPAGE] Outputing image fields in the listing
+- [X] [HOMEPAGE] Outputing image fields in the listing
 - [ ] [HOMEPAGE] MDL design templating
 - [ ] [PROJECT] MDL design templating
 - [ ] [PEOPLE] Get projects + News from creation date and create the update
@@ -32,6 +32,7 @@ Development : Gregoire THIEBAULT
 - [ ] [PROJECT] MDL design templating
 - [ ] [PROJECT] Join/Leave a project
 - [ ] [PROFILE] Get all the project + news + join updates of the user
+- [ ] [USER] Generating a unique & COOL avatar as profile picture
 
 ### DESIGN
 

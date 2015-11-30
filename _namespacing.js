@@ -1,0 +1,2 @@
+var xinconnect = {};
+xinconnect.utils = {};

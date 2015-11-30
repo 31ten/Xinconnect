@@ -9,9 +9,10 @@
 
 <template name="homeUpdatesBlock">
     <li>
-        {{ type }}
-        {{ _id }}
-        {{ title }}
-        {{ createdAt }}
+        <p>{{ type }}</p>
+        <p>{{ _id }}</p>
+        <p>{{ title }}</p>
+        <p>{{ createdAt }}</p>
+        <img src="{{ userAvatar.url }}"/>
     </li>
 </template>
