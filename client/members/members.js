@@ -11,3 +11,11 @@ Template.membersPage.helpers({
         return users;
     }
 });
+
+Template.userBlock.helpers({
+    userAvatar : function () {
+        console.log(this);
+        return Images.findOne({_id: this.profile.avatar});
+    }
+});
+

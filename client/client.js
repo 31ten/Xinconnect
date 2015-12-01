@@ -7,8 +7,7 @@ Accounts.ui.config({
 });
 
 
-
-Template.registerHelper("menu", function (param2) {
+Template.registerHelper("menu", function () {
     var menu = {
         "home":  FlowRouter.path("home"),
         "projects":  FlowRouter.path("projects"),
@@ -20,3 +19,12 @@ Template.registerHelper("menu", function (param2) {
 });
 
 AutoForm.debug();
+AutoForm.setDefaultTemplate('materialize');
+
+Template.layout1.onRendered(function () {
+  (function($){
+        $(function(){
+            $('.button-collapse').sideNav();
+        });
+    })(jQuery);
+});

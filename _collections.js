@@ -137,13 +137,15 @@ var userProfileSchema = new SimpleSchema({
         type : String,
         max : 100,
         defaultValue : '',
-        label: "firstName"
+        label: "firstName",
+        optional: true
     },
     lastName : {
         type : String,
         max : 100,
         defaultValue : '',
-        label: "lastName"
+        label: "lastName",
+        optional: true
     },
     email : {
         type : String,
@@ -163,6 +165,7 @@ var userProfileSchema = new SimpleSchema({
     },
     avatar: {
         type: String,
+        optional: true,
         autoform: {
             afFieldInput: {
                 type: 'fileUpload',
@@ -199,7 +202,7 @@ var userSchema = new SimpleSchema({
             label: false
         },
         optional: true,
-        defaultValue:function(){ return Date.now() }
+        autoValue:function(){ return Date.now() }
     },
     profile: {
         type: userProfileSchema,

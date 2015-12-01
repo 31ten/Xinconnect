@@ -18,12 +18,19 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 kadira:flow-router
 kadira:blaze-layout
-accounts-ui
 accounts-password
+accounts-ui-unstyled
 aldeed:collection2
 cfs:standard-packages
 cfs:gridfs
 aldeed:autoform
 yogiben:autoform-file
 aldeed:delete-button
-zodiase:mdl
+
+poetic:materialize-scss
+gildaspk:autoform-materialize
+
+
+#twbs:bootstrap
+#ian:accounts-ui-bootstrap-3
+

@@ -1,28 +1,32 @@
 <template name="projectPage">
-    <h1>{{project.title}}</h1>
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="card-image ">
+                    <img src="{{illustration.url}}" class="responsive-img">
+                    <span class="card-title"></span>
+                </div>
+                <div class="card-content ">
+                    <h1>{{ project.title }}</h1>
+                    <p>{{ project.description }}</p>
+                </div>
+                <div class="card-action">
+                        <a href="#">Join the project</a>
+                    {{#if isProjectCreator}}
+                        <a href="/project/{{project._id}}/edit">Edit the project</a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+      </div>
 
-    <img height="200" src="{{illustration.url}}"/>
-
-    <p>{{project.description}}</p>
-
-    <h3>PICTURES</h3>
-    <ul>
-        {{#each project.pictures}}
-            {{> pictureProjectBlock}}
-        {{/each}}
-    </ul>
-
-    {{#if isProjectCreator}}
-        <h3>Administration</h3>
-        <a href="/project/{{project._id}}/edit">Edit</a>
-    {{/if}}
 
     <h3>NEWS</h3>
-    <ul>
+    <div class="row">
         {{#each newsList}}
             {{> newsBlock}}
         {{/each}}
-    </ul>
+    </div>
     <a href="/create/news/{{project._id}}">Create news</a>
 </template>
 

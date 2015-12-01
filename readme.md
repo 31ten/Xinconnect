@@ -25,8 +25,10 @@ Development : Gregoire THIEBAULT
 - [X] [USER] Creating a profile picture
 - [x] [PROJECT] Dont update the CreatedAt when a project field is updated
 - [X] [HOMEPAGE] Outputing image fields in the listing
-- [ ] [HOMEPAGE] MDL design templating
-- [ ] [MENU] Menu as a sidebar
+- [X] [HOMEPAGE] MDL design templating
+- [X] [MENU] Menu as a sidebar
+- [X] [MENU] Menu add the user informations
+- [X] [DESIGN] switch from mdl to materialize
 - [ ] [LOGIN/SINGUP] on a separated page, redirect to the profile when logged
 - [ ] [PROJECT] MDL design templating
 - [ ] [PEOPLE] Get projects + News from creation date and create the update
@@ -34,7 +36,8 @@ Development : Gregoire THIEBAULT
 - [ ] [PROJECT] MDL design templating
 - [ ] [PROJECT] Join/Leave a project
 - [ ] [PROFILE] Get all the project + news + join updates of the user
-- [ ] [USER] Generating a unique & COOL avatar as profile picture
+- [ ] [USER] Generating a unique & COOL avatar as profile picture : https://robohash.org/Iloveyourwork2918320978430198230219832091832108312098
+--- [ ] create a async request when creating new profile and adding it http://www.gravatar.com/avatar/222222222dddddddd333334444466666666666?s=200&r=pg&d=retro
 
 ### DESIGN
 

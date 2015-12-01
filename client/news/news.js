@@ -45,6 +45,12 @@ Template.newsBlock.helpers({
         if(news.createdBy == Meteor.user()._id){
             return true
         }
+    },
+    illustration: function () {
+        var pictureId = this.pictures[0].picture;
+        console.log(this.pictures);
+        var pictureObj = Images.findOne({_id: pictureId});
+        return pictureObj;
     }
 });
 
