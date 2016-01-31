@@ -11,6 +11,12 @@ FlowRouter.route('/members',{
         BlazeLayout.render('layout1',{ main: "membersPage" });
     }
 });
+FlowRouter.route('/login',{
+    name: 'login',
+    action: function() {
+        BlazeLayout.render('layout1',{ main: "loginPage" });
+    }
+});
 FlowRouter.route('/projects',{
     name: 'projects',
     action: function() {
@@ -78,4 +84,8 @@ FlowRouter.route('/mdl', {
         BlazeLayout.render("mdl");
     }
 });
-//FS.debug = true;
+//FS.debug = true
+//
+//
+// ;
+

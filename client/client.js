@@ -2,9 +2,7 @@ Meteor.subscribe("images/get/all");
 Meteor.subscribe("news/get/all");
 Meteor.subscribe("users/get/allNames");
 
-Accounts.ui.config({
-    passwordSignupFields: "USERNAME_ONLY"
-});
+
 
 
 Template.registerHelper("menu", function () {
@@ -13,7 +11,8 @@ Template.registerHelper("menu", function () {
         "projects":  FlowRouter.path("projects"),
         "members":  FlowRouter.path("members"),
         "createProject":  FlowRouter.path("create/project"),
-        "profile":  "/profile/"+Meteor.userId()
+        "profile":  "/profile/"+Meteor.userId(),
+        "login":  FlowRouter.path("login"),
     }
     return menu;
 });
