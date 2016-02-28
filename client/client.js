@@ -4,19 +4,6 @@ Meteor.subscribe("users/get/allNames");
 
 
 
-
-Template.registerHelper("menu", function () {
-    var menu = {
-        "home":  FlowRouter.path("home"),
-        "projects":  FlowRouter.path("projects"),
-        "members":  FlowRouter.path("members"),
-        "createProject":  FlowRouter.path("create/project"),
-        "profile":  "/profile/"+Meteor.userId(),
-        "login":  FlowRouter.path("login"),
-    }
-    return menu;
-});
-
 AutoForm.debug();
 AutoForm.setDefaultTemplate('materialize');
 
@@ -27,3 +14,4 @@ Template.layout1.onRendered(function () {
         });
     })(jQuery);
 });
+

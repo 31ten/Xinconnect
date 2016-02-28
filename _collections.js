@@ -43,11 +43,12 @@ Projects.attachSchema(new SimpleSchema({
                 label: 'Choose file'
             }
         }
-    },
+    }
+    /*,
     "pictures.$.pictureDescription": {
         type: String,
         optional: true
-    },
+    }*/,
     createdBy: {
         type: String,
         regEx: SimpleSchema.RegEx.Id,
@@ -99,10 +100,11 @@ News.attachSchema(new SimpleSchema({
             }
         }
     },
+    /*
     "pictures.$.pictureDescription": {
         type: String,
         optional: true
-    },
+    },*/
     createdBy: {
         type: String,
         regEx: SimpleSchema.RegEx.Id,

@@ -66,5 +66,9 @@ Template.homeUpdatesBlock.helpers({
     },
     illustration : function () {
         return Images.findOne({_id: this.illustration});
+    },
+    createdAtReadable : function() {
+        console.log(this);
+        return moment(this.createdAt).format("MMMM Do YYYY h:mm a");
     }
 });

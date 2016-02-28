@@ -17,6 +17,22 @@ FlowRouter.route('/login',{
         BlazeLayout.render('layout1',{ main: "loginPage" });
     }
 });
+
+FlowRouter.route('/logout',{
+    name: 'logout',
+    action: function() {
+        BlazeLayout.render('layout1',{ main: "logoutPage" });
+    }
+});
+
+
+FlowRouter.route('/resetpassword',{
+    name: 'resetpassword',
+    action: function() {
+        BlazeLayout.render('layout1',{ main: "resetPassword" });
+    }
+});
+
 FlowRouter.route('/projects',{
     name: 'projects',
     action: function() {
@@ -84,8 +100,5 @@ FlowRouter.route('/mdl', {
         BlazeLayout.render("mdl");
     }
 });
-//FS.debug = true
-//
-//
-// ;
+//FS.debug = true;
 
