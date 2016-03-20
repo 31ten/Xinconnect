@@ -28,6 +28,7 @@ cfs:standard-packages
 cfs:gridfs
 aldeed:autoform
 yogiben:autoform-file
+cfs:graphicsmagick
 aldeed:delete-button
 
 poetic:materialize-scss
@@ -38,3 +39,4 @@ gildaspk:autoform-materialize
 #ian:accounts-ui-bootstrap-3
 
 momentjs:moment
+fourseven:scss

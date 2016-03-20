@@ -1,0 +1,28 @@
+//
+// MIXINS
+//
+=verticalCenter()
+    top: 50%
+    transform: translateY(-50%)
+
+=icon($src, $width, $height)
+    background-image: url($src)
+    background-repeat: no-repeat
+    background-size: $width
+    width: $width
+    height: $height  
+
+=absoluteCenter()
+    position: absolute
+    left: 0
+    right: 0
+    margin-left: auto
+    margin-right: auto
+
+=absoluteTop($top)
+    position: absolute
+    top: $top
+
+=absoluteBottom($bottom)
+    position: absolute
+    bottom: $bottom

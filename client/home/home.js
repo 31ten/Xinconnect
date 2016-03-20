@@ -39,6 +39,7 @@ Template.homePage.helpers({
             return 0;
         }
         result.sort(compare);
+        console.log(result);
         return result;
     }
 });
@@ -52,6 +53,12 @@ Template.homeUpdatesBlock.helpers({
         }
         var user = Meteor.users.findOne({_id:  userId});
         return Images.findOne({_id: user.profile.avatar});
+    },
+    userLabel : function (){
+        if(this.profile.firstName && this.profile.lastName) return this.profile.firstName+" "+this.profile.lastName;
+        if(this.profile.firstName ) return this.profile.firstName ;
+        if(this.profile.lastName ) return this.profile.lastName ;
+        if(this.emails[0].address ) return this.emails[0].address ;
     },
     user : function () {
         return Meteor.users.findOne({_id: this.createdBy});

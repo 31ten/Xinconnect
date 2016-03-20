@@ -26,10 +26,11 @@ FlowRouter.route('/logout',{
 });
 
 
-FlowRouter.route('/resetpassword',{
-    name: 'resetpassword',
-    action: function() {
-        BlazeLayout.render('layout1',{ main: "resetPassword" });
+FlowRouter.route('/#/reset-password/:id',{
+    name: 'redirection',
+    action: function(params) {
+        alert("redirection!");
+        FlowRouter.go('/reset-password/'+params.id);
     }
 });
 
@@ -93,6 +94,17 @@ FlowRouter.route('/profile/:id/edit', {
     }
 });
 
+FlowRouter.route('/processPicts', {
+    name: 'processPicts',
+    action: function() {
+        console.log("Processing thumbnails pictures creation...");
+        Images.find().forEach(function (fileObj) {
+            var readStream = fileObj.createReadStream('images');
+            var writeStream = fileObj.createWriteStream('images');
+            gm(readStream).swirl(180).stream().pipe(writeStream);
+        });
+    }
+});
 
 FlowRouter.route('/mdl', {
     name: 'mdl',
@@ -100,5 +112,5 @@ FlowRouter.route('/mdl', {
         BlazeLayout.render("mdl");
     }
 });
-//FS.debug = true;
 
+//FS.debug = true;

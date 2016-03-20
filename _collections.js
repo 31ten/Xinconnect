@@ -1,6 +1,21 @@
-Images = new FS.Collection("images", {
-        stores: [new FS.Store.GridFS("images")]
+Meteor.startup(function() {
+ Accounts.urls.resetPassword = function(token) {
+    return Meteor.absoluteUrl('reset-password/' + token);
+  };
 });
+
+var createSquareThumb = function(fileObj, readStream, writeStream) {
+    var size = '96';
+    gm(readStream).autoOrient().resize(size, size + '^').gravity('Center').extent(size, size).stream('PNG').pipe(writeStream);
+};
+
+Images = new FS.Collection("images", {
+        stores: [
+            new FS.Store.GridFS("images"),
+            new FS.Store.GridFS("thumbs", { transformWrite: createSquareThumb })
+        ]
+});
+
 
 Projects = new Meteor.Collection('projects');
 Projects.attachSchema(new SimpleSchema({

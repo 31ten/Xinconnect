@@ -1,38 +1,15 @@
-/* CSS declarations go here */
-.pre {
-    white-space: pre;
-}
+.homeBlock h1 {
+  font-size: 16px;
+  margin: 0px 0px 10px 0px; }
+.homeBlock h3 {
+  font-size: 14px;
+  margin: 0px 0px 10px 0px; }
+.homeBlock P {
+  font-size: 13px;
+  margin: 0px 0px 10px 0px; }
+.homeBlock img.responsive-img {
+  height: 20vw;
+  width: 15vw;
+  max-width: 15vw; }
 
-/* MENU */
-
-.demo-layout-transparent {
-    background: url('../assets/demos/transparent.jpg') center / cover;
-}
-.demo-layout-transparent .mdl-layout__header,
-.demo-layout-transparent .mdl-layout__drawer-button {
-    /* This background is dark, so we set text to white. Use 87% black instead if
-       your background is light. */
-    color: white;
-}
-
-/* GENERAL */
-.hidden {display: none;}
-
-/* MATERIALIZE OVERRIDE */
-h1 {
-    font-size: 2.2rem;
-    line-height: 110%;
-    margin: 0px;
-}
-
-h3 {
-    font-size: 1.20rem;
-    line-height: 110%;
-    margin: 8px 0px 0px 0px;
-}
-
-/* HOMEPAGE */
-.update.news .profile img {
-    width: 100px;
-    height: 100px;
-}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,11 @@
+<template name="layout1">
+    {{> header}}
+     <div class="container">
+        {{#if Template.subscriptionsReady}}
+            {{> Template.dynamic template=main}}
+        {{else}}
+            {{> loading}}
+        {{/if}}
+     </div>
+    {{> footer}}
+</template>
