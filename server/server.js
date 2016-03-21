@@ -28,9 +28,10 @@ Meteor.publish("news/get/fromProject", function (projectId) {
     return News.find({projectId: projectId});
 });
 Meteor.methods({
-
+    "userExists": function(username){
+        return !!Meteor.users.findOne({username: username});
+    },
 });
-
 Meteor.startup(function () {
 
 });

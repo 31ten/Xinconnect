@@ -4,6 +4,23 @@ Template.pictureBlock.helpers({
     }
 });
 
+Template.header.helpers({
+    avatar: function () {
+        console.log(Meteor.user());
+        var userId = Meteor.user();
+        var user = Meteor.users.findOne(userId);
+        var pictureObj = Images.findOne({_id: user.profile.avatar});
+        console.log(pictureObj);
+        if(!pictureObj) {
+            pictureObj = {
+                'url' : "images/profile.png"
+            }  
+        }
+        return pictureObj ;
+    },
+});
+
+
 Template.registerHelper("menu", function () {
     var menu = {
         "home":  FlowRouter.path("home"),

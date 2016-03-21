@@ -25,15 +25,6 @@ FlowRouter.route('/logout',{
     }
 });
 
-
-FlowRouter.route('/#/reset-password/:id',{
-    name: 'redirection',
-    action: function(params) {
-        alert("redirection!");
-        FlowRouter.go('/reset-password/'+params.id);
-    }
-});
-
 FlowRouter.route('/projects',{
     name: 'projects',
     action: function() {

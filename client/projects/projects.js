@@ -24,7 +24,9 @@ Template.projectBlock.helpers({
             var userId = this._id;
         }
         var user = Meteor.users.findOne({_id:  userId});
-        return Images.findOne({_id: user.profile.avatar});
+        if(user.profile){
+            return Images.findOne({_id: user.profile.avatar});
+        }
     },
     user : function () {
         return Meteor.users.findOne({_id: this.createdBy});

@@ -1,7 +1,9 @@
 Meteor.startup(function() {
- Accounts.urls.resetPassword = function(token) {
-    return Meteor.absoluteUrl('reset-password/' + token);
-  };
+    if(Accounts.urls) {
+        Accounts.urls.resetPassword = function(token) {
+            return Meteor.absoluteUrl('reset-password/' + token);
+        };
+    }
 });
 
 var createSquareThumb = function(fileObj, readStream, writeStream) {
