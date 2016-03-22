@@ -51,10 +51,7 @@ Template.homeUpdatesBlock.helpers({
         }else{
             var userId = this._id;
         }
-        var user = Meteor.users.findOne({_id:  userId});
-        if(user && user.profile) {
-            return Images.findOne({_id: user.profile.avatar});
-        }  
+        return getAvatar(userId);
     },
     userLabel : function (){
         if(this.username) return this.username;

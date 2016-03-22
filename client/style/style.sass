@@ -1,3 +1,69 @@
+=bg()
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+.homeBlock
+    h1
+        font-size: 16px
+        margin: 0px 0px 10px 0px
+    h3
+        font-size: 14px
+        margin: 0px 0px 10px 0px
+    P
+        font-size: 13px
+        margin: 0px 0px 10px 0px
+    .profile
+        a
+            +bg()
+            width: 80px
+            height: 80px
+            display: block
+            
+    img.responsive-img
+        //height : 20vw
+        //width : 20vw
+        //max-width: 20vw
+
+
+
+$yellow : #DEFF00
+$black : #1A1A1A
+$blue : #0055A1
+$blueLink : #0571BA
+$lightGrey : #E4E4E4
+$greyText : rgba(0,0,0,0.53)
+/* GENERAL */
+body
+    background-color: $lightGrey
+.row 
+    h1
+        a
+            font-size: 16px
+            font-weight: bold
+    h3
+        font-size: 14px
+        color: $greyText
+    p
+        font-size: 13px
+    .infos
+        font-size: 12px
+        color: $greyText
+    a
+        color: $blue
+        text-decoration: underline
+    .card 
+        box-shadow: none
+        .card-content
+            padding: 30px 40px
+/* HOME */
+.home.template
+    .homeBlock
+        
+    .news
+        .card 
+            .card-content
+                border-top: 5px $blue solid
 .homeBlock
     h1
         font-size: 16px
@@ -19,7 +85,7 @@
         width: 470px!important
 .header
     nav.header-nav
-        background-color: #1A1A1A
+        background-color: $black
     #logo-container
         font-size: 21px
         background-image: url("/images/logo.png")
@@ -52,4 +118,17 @@
         background-size: 19px 19px
         background-repeat: no-repeat
         margin-left: 14px
-
+    .login
+        border: 1px solid white
+    .signup
+        background: $yellow
+        border: 1px solid $yellow
+        color: $black
+    .button
+        border-radius: 5px
+        font-weight: bold
+        height: 37px
+        line-height: 2px
+        padding: 20px
+        text-transform: uppercase
+        margin: 10px 10px 10px 10px

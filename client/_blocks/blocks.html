@@ -9,8 +9,8 @@
             {{#if currentUser}}
               <li><a class="profile" style="background-image: url('{{ avatar.url }}');"></a></li>
             {{else}}
-            <li> <a href="{{ menu.login }}" class="login mdl-navigation__link">Login</a></li>
-            <li> <a href="{{ menu.login }}" class="signup mdl-navigation__link">Signup</a></li>
+            <li> <a href="{{ menu.login }}" class="login button mdl-navigation__link">Login</a></li>
+            <li> <a href="{{ menu.signup }}" class="signup button mdl-navigation__link">Signup</a></li>
             {{/if}}
         </ul>
 
@@ -43,7 +43,7 @@
 </template>
 
 <template name="pictureBlock">
-    <div class="col s12 m3">
-        <img src="{{picture.url}}" class="responsive-img" />
+    <div class="pictureBlock">
+        <img src="{{picture.url}}" />
     </div>
 </template>

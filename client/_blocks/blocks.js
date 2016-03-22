@@ -8,15 +8,7 @@ Template.header.helpers({
     avatar: function () {
         console.log(Meteor.user());
         var userId = Meteor.user();
-        var user = Meteor.users.findOne(userId);
-        var pictureObj = Images.findOne({_id: user.profile.avatar});
-        console.log(pictureObj);
-        if(!pictureObj) {
-            pictureObj = {
-                'url' : "images/profile.png"
-            }  
-        }
-        return pictureObj ;
+        return getAvatar(userId);
     },
 });
 
@@ -29,6 +21,7 @@ Template.registerHelper("menu", function () {
         "createProject":  FlowRouter.path("create/project"),
         "profile":  "/profile/"+Meteor.userId(),
         "login":  "/sign-in",
+        "signup":  "/sign-up",
         "logout":  FlowRouter.path("logout")
     }
     return menu;

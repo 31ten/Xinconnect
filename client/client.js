@@ -6,6 +6,19 @@ Meteor.subscribe("users/get/allNames");
 AutoForm.debug();
 AutoForm.setDefaultTemplate('materialize');
 
+getAvatar = function (uid){
+    var user = Meteor.users.findOne(uid);
+    var pictureObj = Images.findOne({_id: user.profile.avatar});
+    console.log(pictureObj);
+    if(!pictureObj) {
+        pictureObj = {
+            'url' : "images/profile.png"
+        }  
+    }
+    return pictureObj ;
+}
+
+
 Template.layout1.onRendered(function () {
   (function($){
         $(function(){

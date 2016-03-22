@@ -1,24 +1,27 @@
 <template name="homePage">
-    <ul>
-        {{#each homeUpdates}}
-            {{> homeUpdatesBlock }}
-        {{/each}}
-    </ul>
+    <div class="home template">
+        <ul>
+            {{#each homeUpdates}}
+                {{> homeUpdatesBlock }}
+            {{/each}}
+        </ul>
+    </div>
 </template>
 
 <template name="homeUpdatesBlock">
     {{#if newsTpl}}
-      <div class="row update news homeBlock">
+      <div class="row card-wrapper update news homeBlock">
         <div class="col s12 m12">
             <div class="card">
                 <div class="card-content ">
                     <div class="section-1 row">
-                        <div class="col s4 m2 profile">
-                            <a href="/profile/{{ user._id }}" class="circle" style="background-image: url('{{ userAvatar.url }}')"></a>
+                        <div class="col s4 m3 profile">
+                            <a href="/profile/{{ user._id }}" style="background-image: url('{{ userAvatar.url }}')"></a>
                         </div>
-                        <div class="col s8 m10">
-                            <h1><a href="/project/{{ newsProject._id }}">{{ title }}</a></h1>
-                            <h3>{{ createdAtReadable }}</h3>
+                        <div class="col s8 m9">
+                            <h1><a href="/project/{{ newsProject._id }}#{{ title }}">{{ title }}</a></h1>
+                            <h3>Project : <a href="/project/{{ newsProject._id }}">{{ newsProject.title }}</a></h3>
+                            <div class="infos">Updated by : <a href="/profile/{{ user._id }}">{{ user.username }} at {{ createdAtReadable }}</a></div>
                         </div>
                     </div>
                     <div class="section-2 row description">
@@ -33,10 +36,42 @@
             </div>
         </div>
       </div>
-
     {{/if }}
 
     {{#if projectTpl}}
+
+        <div class="row card-wrapper update project homeBlock">
+            <div class="col s12 m12">
+                <div class="card">
+                    <div class="card-content ">
+                        <div class="title section-1 row">
+                            <h1><a href="/project/{{ _id }}">{{ title }}</a></h1>
+                        </div>
+                        {{#if illustration}}
+                        <div class="illustration section-2 row">
+                            <a href="/project/{{ _id }}" style="background-image: url('{{ illustration.url }}')"></a>
+                        </div>
+                        {{/if }}
+                        <div class="creator section-2 row">
+                            <div class="avatar float">
+                                <a href="/profile/{{ user._id }}" style="background-image: url('{{ userAvatar.url }}')"></a>
+                            </div>
+                            <div class="username float">
+                                {{ user.username }}
+                            </div>  
+                            <div class="clear"></div>
+                        </div>
+                        <div class="section-3 description row">
+                            {{ description }}
+                        </div>
+                        <div class="section-4 ctas row">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+
         <div class="row update news homeBlock">
             <div class="col s12 m12">
                 <div class="card">
