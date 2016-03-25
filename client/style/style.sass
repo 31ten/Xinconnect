@@ -1,39 +1,82 @@
-=bg()
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
+@charset 'UTF-8';
 
-.homeBlock
-    h1
-        font-size: 16px
-        margin: 0px 0px 10px 0px
-    h3
-        font-size: 14px
-        margin: 0px 0px 10px 0px
-    P
-        font-size: 13px
-        margin: 0px 0px 10px 0px
-    .profile
-        a
-            +bg()
-            width: 80px
-            height: 80px
-            display: block
-            
-    img.responsive-img
-        //height : 20vw
-        //width : 20vw
-        //max-width: 20vw
-
-
-
+//
+// VARIABLES
+//
 $yellow : #DEFF00
 $black : #1A1A1A
 $blue : #0055A1
 $blueLink : #0571BA
 $lightGrey : #E4E4E4
 $greyText : rgba(0,0,0,0.53)
-/* GENERAL */
+
+//
+// MIXINS
+//
+=bg()
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+=anim()
+    transition: all 0.2s
+    -webkit-transition: all 0.2s
+    -moz-transition: all 0.2s
+    -o-transition: all 0.2s
+    -ms-transition: all 0.2s
+
+=verticalCenter()
+    top: 50%
+    transform: translateY(-50%)
+
+=icon($src, $width, $height)
+    background-image: url($src)
+    background-repeat: no-repeat
+    background-size: $width
+    width: $width
+    height: $height  
+
+=absoluteCenter()
+    position: absolute
+    left: 0
+    right: 0
+    margin-left: auto
+    margin-right: auto
+
+=absoluteTop($top)
+    position: absolute
+    top: $top
+
+=absoluteBottom($bottom)
+    position: absolute
+    bottom: $bottom
+
+//
+// INTERFACE
+//
+.button
+    padding: 10px 15px
+    border-radius: 2px
+    font-size: 14px
+    font-weight: 400    
+    text-transform: uppercase
+    text-decoration: none!important
+    margin-right: 10px
+    +anim()
+.button.grey:hover,
+.button.blue  
+    color: white
+    background: $blue!important
+.button.blue:hover,
+.button.grey
+    color: $blue
+    background: $lightGrey!important
+
+
+
+//
+// GENERAL
+//
 body
     background-color: $lightGrey
 .row 
@@ -55,16 +98,15 @@ body
     .card 
         box-shadow: none
         .card-content
-            padding: 30px 40px
-/* HOME */
-.home.template
-    .homeBlock
-        
-    .news
-        .card 
-            .card-content
-                border-top: 5px $blue solid
-.homeBlock
+
+@media only screen and (min-width: 601px)
+    .main.container
+        width: 470px!important
+
+//
+// GENERAL : CARD
+//
+.card
     h1
         font-size: 16px
         margin: 0px 0px 10px 0px
@@ -77,12 +119,11 @@ body
     a.profile
         
     img.responsive-img
-        //height : 20vw
-        //width : 20vw
-        //max-width: 20vw
-@media only screen and (min-width: 601px)
-    .main.container
-        width: 470px!important
+
+
+//
+// GENERAL : HEADER
+//
 .header
     nav.header-nav
         background-color: $black
@@ -132,3 +173,146 @@ body
         padding: 20px
         text-transform: uppercase
         margin: 10px 10px 10px 10px
+
+
+//
+// BLOCK-GENERAL
+//
+.xcBlock
+
+//
+// BLOCK-PROJECT
+//
+.projectBlock
+    .card 
+        .card-content
+            padding: 0px 0px
+            .title 
+                background: $blue
+                padding: 30px 30px 20px 30px
+                a
+                    color: white
+                    font-size: 21px
+                    font-weight: 400
+            .illustration
+                a
+                    height: 220px
+                    width: 100%
+                    display: block
+                    +bg()
+            .creator
+                background: $blueLink
+                position: relative
+                height: 50px
+                padding: 0px 30px 0px 30px
+                a
+                    color: white
+                    font-size: 14px
+                    font-weight: 400
+                .avatar
+                    a
+                        position: absolute
+                        top: 0px
+                        left: 30px
+                        display: block
+                        width: 50px
+                        height: 50px
+                        +bg()
+                .username
+                    a
+                        color: white
+                        font-size: 14px
+                        position: absolute
+                        top: 17px
+                        left: 100px
+            .description
+                padding: 30px 30px 20px 30px
+                font-size: 13px
+                border-bottom: 1px solid rgba(0,0,0,0.2)
+            .ctas
+                padding: 20px 30px
+                .join
+                .more
+
+//
+// BLOCK-USER
+//
+.userBlock
+    .card 
+        .card-content
+            padding: 30px 40px
+            .section-1
+                margin-bottom: 0px
+                .profile
+                    padding: 0px
+                    a
+                        height: 80px
+                        width: 80px
+                        +bg()
+                        display: block
+                .description
+
+//
+// BLOCK-news
+//
+.newsBlock
+    h1
+        font-size: 16px
+        margin: 0px 0px 10px 0px
+    h3
+        font-size: 14px
+        margin: 0px 0px 10px 0px
+    P
+        font-size: 13px
+        margin: 0px 0px 10px 0px
+    .row
+        margin-left: 0px
+        margin-right: 0px
+        .profile
+            a
+                +bg()
+                width: 80px
+                height: 80px
+                display: block
+        .description
+            margin-bottom: 20px
+        img.responsive-img
+            //height : 20vw
+            //width : 20vw
+            //max-width: 20vw
+
+//
+// PROJECTS
+//
+.create-project
+    margin-bottom: 0px
+    a
+        .card
+            position: relative
+            padding: 20px
+            .icon-add
+                +icon("../images/icon-add.png", 20px, 20px)
+                margin-left: 30px
+            .label
+                color: $greyText
+                position: absolute
+                top: 20px 
+                left: 100px
+        
+        
+/* HOME */
+.home.template
+    .homeBlock
+        margin-bottom: 0px
+        
+
+    .news
+        .card 
+            .card-content
+                border-top: 5px $blue solid
+                padding: 30px 40px
+            .profile
+                padding: 0px
+    
+
+

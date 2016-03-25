@@ -1,0 +1,15 @@
+<template name="pictureProjectBlock">
+    <img src="{{ picture.url }}" height="100"/>
+    <p>description : {{ pictureDescription }}</p>
+</template>
+
+<template name="createProjectPage">
+    <h1>ADD PROJECT</h1>
+    {{> quickForm collection="Projects" id="insertProjectForm" type="insert"}}
+</template>
+
+<template name="editProjectPage">
+    <h1>EDIT PROJECT</h1>
+    {{> quickForm collection="Projects" doc=project id="editProjectForm" type="update"}}
+    {{#quickRemoveButton collection="Projects" _id=project._id beforeRemove=beforeProjectRemove  class="btn btn-danger"}}Delete Project{{/quickRemoveButton}}
+</template>

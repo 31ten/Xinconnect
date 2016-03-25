@@ -1,20 +1,8 @@
 <template name="membersPage">
-    <h1>MEMBERS</h1>
     <ul class="collection">
-        {{#each users}}
+        {{#each usersUpdates}}
             {{> userBlock}}
         {{/each}}
     </ul>
 </template>
 
-<!-- MEMBERS PAGE BLOCK -->
-<template name="userBlock">
-    <li class="collection-item avatar">
-      <img src="{{userAvatar.url}}" alt="" class="circle responsive-img">
-      <span class="title">{{username}}</span>
-      <p>
-        {{profile.email}}
-      </p>
-      <a href="/profile/{{_id}}" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-</template>

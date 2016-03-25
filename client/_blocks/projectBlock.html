@@ -1,0 +1,37 @@
+<template name="projectBlock">
+     <div class="row card-wrapper update projectBlock xcBlock">
+            <div class="col s12 m12">
+                <div class="card">
+                    <div class="card-content ">
+                        <div class="title section-1">
+                            <h1><a href="/project/{{ _id }}">{{ title }}</a></h1>
+                        </div>
+                        {{#if illustration}}
+                        <div class="illustration section-2">
+                            <a href="/project/{{ _id }}" style="background-image: url('{{ illustration.url }}')"></a>
+                        </div>
+                        {{/if }}
+                        <div class="creator section-3">
+                            <div class="avatar">
+                                <a href="/profile/{{ user._id }}" style="background-image: url('{{ userAvatar.url }}')"></a>
+                            </div>
+                            <div class="username">
+                               <a href="/profile/{{ user._id }}"> {{ user.username }} </a>
+                            </div>  
+                            <div class="clear"></div>
+                        </div>
+                        <div class="section-4 description">
+                            {{ description }}
+                        </div>
+                        <div class="section-5 ctas">
+                            <a class="button blue ACTION_join_project" href="#">Join the project</a>
+                            <a class="button grey" href="/project/{{ _id }}">See more updates</a>
+                            {{#if isProjectCreator}}
+                                <a class="button grey" href="/project/{{_id}}/edit">Edit the project</a>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+</template>

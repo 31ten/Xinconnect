@@ -6,9 +6,7 @@ Template.pictureBlock.helpers({
 
 Template.header.helpers({
     avatar: function () {
-        console.log(Meteor.user());
-        var userId = Meteor.user();
-        return getAvatar(userId);
+        return xc.currentUser.getPict();
     },
 });
 

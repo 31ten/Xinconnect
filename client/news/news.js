@@ -38,21 +38,6 @@ Template.pictureNewsBlock.helpers({
     }
 });
 
-Template.newsBlock.helpers({
-    isNewsCreator : function () {
-        var newsId = this._id;
-        var news = News.findOne({_id: newsId}) || {};
-        if(news.createdBy == Meteor.user()._id){
-            return true
-        }
-    },
-    illustration: function () {
-        var pictureId = this.pictures[0].picture;
-        var pictureObj = Images.findOne({_id: pictureId});
-        return pictureObj;
-    }
-});
-
 
 AutoForm.hooks({
     insertNewsForm: {

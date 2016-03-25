@@ -11,32 +11,6 @@
     {{#quickRemoveButton collection="News" _id=news._id beforeRemove=beforeNewsRemove  class="btn btn-danger"}}Delete News{{/quickRemoveButton}}
 </template>
 
-<template name="newsBlock">
-    <div class="col s12 m6">
-        <div class="card">
-            <div class="card-image">
-                <img src="{{illustration.url}}">
-                <span class="card-title">{{title}}</span>
-            </div>
-            <div class="card-content">
-                <div class="row">
-                    {{description}}
-                </div>
-                <div class="row">
-                    {{#each pictures}}
-                    {{> pictureNewsBlock}}
-                    {{/each}}
-                </div>
-            </div>
-            {{#if isNewsCreator}}
-            <div class="card-action">
-                <a href="/news/{{_id}}/edit">Edit News</a>
-            </div>
-            {{/if}}
-        </div>
-    </div>
-</template>
-
 <template name="pictureNewsBlock">
     <div class="m3">
         <img src="{{ picture.url }}" class="responsive-img"/>
