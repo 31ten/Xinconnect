@@ -102,6 +102,8 @@ body
 @media only screen and (min-width: 601px)
     .main.container
         width: 470px!important
+    .main.container.af
+        width: auto!important
 
 //
 // GENERAL : CARD
@@ -200,6 +202,51 @@ body
     .card:hover
         box-shadow: 0px 0px 4px rgba(0,0,0,0.3)
 
+//
+// BLOCK-GENERAL
+//
+
+.main.container.af
+    .col.s12.m8
+        background: white
+        margin-top: 20px
+        padding: 0px
+        .at-form
+            .btn
+                background: $blue
+            .row
+                margin: 0px
+            h3
+                padding: 30px
+                background: $blue
+                display: block
+                font-size: 21px
+                color: white
+                font-weight: 400
+                margin-top: 0px
+            .at-pwd-form,
+            .at-signup-link,
+            .at-signin-link,
+                padding: 20px
+
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search],
+textarea.materialize-textarea 
+    &:disabled, &[readonly="readonly"] 
+        color: $blue
+        border-bottom: 1px dotted $blue
+    &:focus:not([readonly]) 
+        border-bottom: 1px solid $blue
+        box-shadow: 0 1px 0 0 $blue
 
 //
 // BLOCK-PROJECT

@@ -1,11 +1,14 @@
 <template name="layout1">
     {{> header}}
-     <div class="main container">
+    <div class="main container af">
+        {{> Template.dynamic template=af}}
+    </div>
+    <div class="main container">
         {{#if Template.subscriptionsReady}}
             {{> Template.dynamic template=main}}
         {{else}}
             {{> loading}}
         {{/if}}
-     </div>
+    </div>
     {{> footer}}
 </template>

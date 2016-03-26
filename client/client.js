@@ -38,7 +38,7 @@ Template.layout1.onRendered(function () {
 AccountsTemplates.configure({
     defaultLayout: 'layout1',
     defaultLayoutRegions: {},
-    defaultContentRegion: 'main',
+    defaultContentRegion: 'af',
     // Behaviour
     confirmPassword: true,
     enablePasswordChange: true,
@@ -61,10 +61,6 @@ AccountsTemplates.configure({
     positiveValidation: true,
     positiveFeedback: true,
     showValidating: true,
-
-    // Privacy Policy and Terms of Use
-    privacyUrl: 'privacy',
-    termsUrl: 'terms-of-use',
 
     // Redirects
     //homeRoutePath: '/dashboard',

@@ -89,4 +89,13 @@ FlowRouter.route('/logout',{
 });
 
 
+FlowRouter.route('/sign-in',{
+    name: 'signin',
+    action: function() {
+        BlazeLayout.render('layout1',{ main: "loginPage" });
+    }
+});
+
+
+
 //FS.debug = true;
