@@ -4,12 +4,30 @@
 </template>
 
 <template name="createProjectPage">
-    <h1>ADD PROJECT</h1>
-    {{> quickForm collection="Projects" id="insertProjectForm" type="insert"}}
+    <div class="row card-wrapper xcBlock crud-block">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="header">ADD PROJECT</div>
+                <div class="content">
+                    {{> quickForm collection="Projects" id="insertProjectForm" type="insert"}}
+                </div>
+            </div>
+        </div>
+    </div> 
 </template>
 
 <template name="editProjectPage">
-    <h1>EDIT PROJECT</h1>
-    {{> quickForm collection="Projects" doc=project id="editProjectForm" type="update"}}
-    {{#quickRemoveButton collection="Projects" _id=project._id beforeRemove=beforeProjectRemove  class="btn btn-danger"}}Delete Project{{/quickRemoveButton}}
+    <div class="row card-wrapper xcBlock crud-block">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="header">EDIT PROJECT</div>
+                <div class="content">
+                    {{> quickForm collection="Projects" doc=project id="editProjectForm" type="update"}}
+                    {{#quickRemoveButton collection="Projects" _id=project._id beforeRemove=beforeProjectRemove  class="btn btn-danger"}}Delete Project{{/quickRemoveButton}}
+                </div>
+            </div>
+        </div>
+    </div> 
 </template>
+
+

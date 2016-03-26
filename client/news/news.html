@@ -1,14 +1,30 @@
 <template name="createNewsPage">
-    <h1>ADD NEWS</h1>
-    <a href="/project/{{projectId}}"> Come back to Project page </a>
-    {{> quickForm collection="News" id="insertNewsForm" type="insert"}}
+    <div class="row card-wrapper xcBlock crud-block">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="header">ADD NEWS</div>
+                <div class="content">
+                    <a href="/project/{{projectId}}"> Come back to Project page </a>
+                    {{> quickForm collection="News" id="insertNewsForm" type="insert"}}
+                </div>
+            </div>
+        </div>
+    </div>      
 </template>
 
 <template name="editNewsPage">
-    <h1>EDIT NEWS</h1>
-    <a href="/project/{{news.projectId}}"> Come back to Project page </a>
-    {{> quickForm collection="News" doc=news id="editNewsForm" type="update"}}
-    {{#quickRemoveButton collection="News" _id=news._id beforeRemove=beforeNewsRemove  class="btn btn-danger"}}Delete News{{/quickRemoveButton}}
+    <div class="row card-wrapper xcBlock crud-block">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="header">EDIT NEWS</div>
+                <div class="content">
+                    <a href="/project/{{news.projectId}}"> Come back to Project page </a>
+                    {{> quickForm collection="News" doc=news id="editNewsForm" type="update"}}
+                    {{#quickRemoveButton collection="News" _id=news._id beforeRemove=beforeNewsRemove  class="btn btn-danger"}}Delete News{{/quickRemoveButton}}
+                </div>
+            </div>
+        </div>
+    </div>       
 </template>
 
 <template name="pictureNewsBlock">

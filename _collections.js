@@ -45,6 +45,7 @@ Projects.attachSchema(new SimpleSchema({
             rows: 6
         }
     },
+    /*,
     pictures: {
         type: [Object],
         optional : true,
@@ -61,11 +62,10 @@ Projects.attachSchema(new SimpleSchema({
             }
         }
     }
-    /*,
     "pictures.$.pictureDescription": {
         type: String,
         optional: true
-    }*/,
+    }*/
     createdBy: {
         type: String,
         regEx: SimpleSchema.RegEx.Id,

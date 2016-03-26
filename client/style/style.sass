@@ -202,9 +202,64 @@ body
     .card:hover
         box-shadow: 0px 0px 4px rgba(0,0,0,0.3)
 
+
 //
-// BLOCK-GENERAL
+// BLOCK-CRUD
 //
+.crud-block
+    margin-top: 20px
+    padding: 0px
+    .card
+        .header
+            padding: 30px
+            background: $blue
+            display: block
+            font-size: 21px
+            color: white
+            font-weight: 400
+            margin-top: 0px
+        .content
+            position: relative
+            padding: 20px  
+            .btn-danger
+                background: #B33939
+                bottom: 40px
+                right: 20px
+                position: absolute
+            .collection
+                border: none
+                .collection-item
+                    position: relative
+                    border-bottom: 0px solid #e0e0e0
+                    .autoform-add-item
+                        position: absolute
+                        right: 50px
+                        z-index: 2;
+                    .js-af-select-file
+                        position: absolute
+                        top: -80px
+                        right: 210px
+                    .autoform-remove-item
+                        position: absolute
+                        top: -130px
+                        right: 50px
+                        background: #B33939
+                    .card-panel
+                        box-shadow: none
+                        padding: 0px
+                        margin: 0px
+                .input-field
+                    label
+                        display: none
+            input[type="file"].hidden
+                display: none
+//
+// BLOCK-AF
+//
+.btn
+    background: $blue
+.btn:hover
+    background: $blueLink
 
 .main.container.af
     .col.s12.m8
@@ -212,8 +267,6 @@ body
         margin-top: 20px
         padding: 0px
         .at-form
-            .btn
-                background: $blue
             .row
                 margin: 0px
             h3
