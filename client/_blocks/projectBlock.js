@@ -12,6 +12,7 @@ Template.projectBlock.helpers({
         return xc.utils.formatDate(this.createdAt);
     },
     isProjectCreator : function() {
-        return xc.utils.formatDate(this.createdAt);
+        if(xc.currentUser.getId() == this.createdBy) return true;
+        return false;
     }
 });

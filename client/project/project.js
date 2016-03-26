@@ -17,31 +17,23 @@ Template.projectPage.helpers({
         var project = Projects.findOne({_id: projectId}) || {};
         return project;
     },
+    projectUpdates: function(){
+        var updates = xc.updates.fromProject(FlowRouter.getParam('id'));
+        console.log(updates);
+        return updates;
+    },
     illustration: function () {
         var projectId = FlowRouter.getParam('id');
         var project = Projects.findOne({_id: projectId}) || {};
         var image = Images.findOne({_id: project.illustration});
         return image;
     },
-    isProjectCreator : function () {
-        var projectId = FlowRouter.getParam('id');
-        var project = Projects.findOne({_id: projectId}) || {};
-        if(project.createdBy == Meteor.user()._id){
-            return true
+    createBlockData : function () {
+        return result = {
+            label : "news",
+            id : "news",
+            url : "/create/news/"+FlowRouter.getParam('id')
         }
-    },
-    newsList : function () {
-        var projectId = FlowRouter.getParam('id');
-        var newsList = News.find({projectId: projectId});
-        return newsList;
-    }
-});
-
-Template.pictureProjectBlock.helpers({
-    picture: function () {
-        var pictureId = this.picture;
-        var pictureObj = Images.findOne({_id: pictureId});
-        return pictureObj;
     }
 });
 

@@ -24,8 +24,10 @@
                             {{ description }}
                         </div>
                         <div class="section-5 ctas">
-                            <a class="button blue ACTION_join_project" href="#">Join the project</a>
-                            <a class="button grey" href="/project/{{ _id }}">See more updates</a>
+                            <div class="buttons-wrapper">
+                                <a class="button blue ACTION_join_project" href="#">Join the project</a>
+                                <a class="button grey" href="/project/{{ _id }}">See more updates</a>
+                            </div>
                             {{#if isProjectCreator}}
                                 <a class="button grey" href="/project/{{_id}}/edit">Edit the project</a>
                             {{/if}}

@@ -1,15 +1,7 @@
 <template name="projectsPage">
     <ul>
-        <div class="row card-wrapper create-project">
-            <a href="/create/project">
-                <div class="col s12 m12">
-                    <div class="card">
-                        <div class="icon-add"></div>
-                        <div class="label">CREATE A PROJECT</div>
-                    </div>
-                </div>
-            </a>
-        </div>
+        {{> Template.dynamic template="createBlock" data=createBlockData }}
+
         {{#each projects}}
             {{> projectBlock}}
         {{/each}}

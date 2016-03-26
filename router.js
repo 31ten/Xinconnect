@@ -5,39 +5,42 @@ FlowRouter.route('/',{
         BlazeLayout.render('layout1',{ main: "homePage" });
     }
 });
+
+// MEMBERS GROUP PAGES
 FlowRouter.route('/members',{
     name: 'members',
     action: function() {
         BlazeLayout.render('layout1',{ main: "membersPage" });
     }
 });
-FlowRouter.route('/login',{
-    name: 'login',
+FlowRouter.route('/profile/:id', {
+    name: 'profile',
     action: function() {
-        BlazeLayout.render('layout1',{ main: "loginPage" });
+        BlazeLayout.render('layout1',{ main: "profilePage"});
+    }
+});
+FlowRouter.route('/profile/:id/edit', {
+    name: 'editProfilePage',
+    action: function() {
+        BlazeLayout.render('layout1',{ main: "editProfilePage"});
     }
 });
 
-FlowRouter.route('/logout',{
-    name: 'logout',
-    action: function() {
-        BlazeLayout.render('layout1',{ main: "logoutPage" });
-    }
-});
 
+// PROJECT GROUP PAGES
 FlowRouter.route('/projects',{
     name: 'projects',
     action: function() {
         BlazeLayout.render('layout1',{ main: "projectsPage"});
     }
 });
+
 FlowRouter.route('/project/:id',{
     name: 'project',
     action: function() {
         BlazeLayout.render('layout1',{ main: "projectPage"});
     }
 });
-
 FlowRouter.route('/create/project', {
     name: 'create/project',
     loadingTemplate: 'loading',
@@ -45,7 +48,6 @@ FlowRouter.route('/create/project', {
         BlazeLayout.render('layout1',{ main: "createProjectPage"});
     }
 });
-
 FlowRouter.route('/project/:id/edit', {
     name: 'edit/project',
     loadingTemplate: 'loading',
@@ -70,38 +72,21 @@ FlowRouter.route('/news/:id/edit', {
     }
 });
 
-FlowRouter.route('/profile/:id', {
-    name: 'profile',
+// OTHER
+
+FlowRouter.route('/login',{
+    name: 'login',
     action: function() {
-        BlazeLayout.render('layout1',{ main: "profilePage"});
+        BlazeLayout.render('layout1',{ main: "loginPage" });
     }
 });
 
-
-FlowRouter.route('/profile/:id/edit', {
-    name: 'editProfilePage',
+FlowRouter.route('/logout',{
+    name: 'logout',
     action: function() {
-        BlazeLayout.render('layout1',{ main: "editProfilePage"});
+        BlazeLayout.render('layout1',{ main: "logoutPage" });
     }
 });
 
-FlowRouter.route('/processPicts', {
-    name: 'processPicts',
-    action: function() {
-        console.log("Processing thumbnails pictures creation...");
-        Images.find().forEach(function (fileObj) {
-            var readStream = fileObj.createReadStream('images');
-            var writeStream = fileObj.createWriteStream('images');
-            gm(readStream).swirl(180).stream().pipe(writeStream);
-        });
-    }
-});
-
-FlowRouter.route('/mdl', {
-    name: 'mdl',
-    action: function() {
-        BlazeLayout.render("mdl");
-    }
-});
 
 //FS.debug = true;

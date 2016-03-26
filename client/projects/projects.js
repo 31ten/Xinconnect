@@ -9,5 +9,12 @@ Template.projectsPage.helpers({
     projects: function () {
         var projects = Projects.find({}, {sort: {createdAt: -1}});
         return projects;
+    },
+    createBlockData : function () {
+        return result = {
+            label : "project",
+            id : "project",
+            url : "/create/project"
+        }
     }
 });

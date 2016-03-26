@@ -137,6 +137,14 @@ body
         margin-left: 50px
     .button-collapse
         display: block
+    ul
+        li
+            a
+                color: rgba(255,255,255,0.7)
+    ul#nav-mobile
+        li
+            a
+                color: $black
     .profile
         width: 40px
         height: 40px
@@ -145,6 +153,12 @@ body
         border-radius: 100px
         margin-top: 11px
         margin-left: 20px
+    .active
+        border-bottom: 11px #DEFF00 solid
+        height: 64px
+        color: white
+    .people.active
+        background-image: url("/images/members-active.png")
     .people
         background-image: url("/images/members.png")
         background-position: 0px 19px
@@ -152,6 +166,8 @@ body
         background-size: 22px 22px
         background-repeat: no-repeat
         margin-left: 14px
+    .projects.active
+        background-image: url("/images/screw-active.png")
     .projects
         background-image: url("/images/screw.png")
         background-position: 0px 23px
@@ -231,8 +247,12 @@ body
                 border-bottom: 1px solid rgba(0,0,0,0.2)
             .ctas
                 padding: 20px 30px
-                .join
-                .more
+                .buttons-wrapper
+                    clear: both
+                    height: 45px
+                    .join
+                    .more
+
 
 //
 // BLOCK-USER
@@ -284,7 +304,7 @@ body
 //
 // PROJECTS
 //
-.create-project
+.create-block
     margin-bottom: 0px
     a
         .card
@@ -298,6 +318,7 @@ body
                 position: absolute
                 top: 20px 
                 left: 100px
+                text-transform: uppercase
         
         
 /* HOME */

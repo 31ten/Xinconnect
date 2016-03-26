@@ -1,5 +1,7 @@
-xc = {};
+xc = new ReactiveVar({});
+xc.vars = {};
 xc.utils = {};
+xc.menu = {};
 xc.updates = {};
 xc.user = {};
 xc.currentUser = {};
@@ -46,6 +48,8 @@ xc.updates.fromProject = function(projectId){
 
     result = xc.utils.sortByDate(result);
 
+    console.log(result);
+
     return result;
 };
 
@@ -59,9 +63,11 @@ xc.updates.getUserId = function (update){
 //
 
 xc.user.getPict = function (uid) {
+    if(!uid) return false;
+
     var user = Meteor.users.findOne(uid);
 
-    defaultPict = { 'url' : "images/profile.png" } 
+    defaultPict = { 'url' : "/images/profile.png" } 
 
     if(user.profile){
         var pictureObj = Images.findOne({_id: user.profile.avatar});
@@ -81,14 +87,29 @@ xc.user.getLabel = function (uid){
     if(user.profile.lastName ) return user.profile.lastName ;
 }
 
+xc.user.belongToProject = function (uid,pid){
+    var user = Meteor.users.findOne(uid);
+    var project = Project.find({_id: pid}).fetch();
+    // get 
+}
+
 
 //
 // CURRENT USER
 //
 xc.currentUser.getPict = function () {
     var currentUser = Meteor.user();
-    console.log(currentUser);
     return xc.user.getPict(currentUser._id);
+}
+
+xc.currentUser.get = function () {
+    var currentUser = Meteor.user();
+    return currentUser;
+}
+
+xc.currentUser.getId = function () {
+    var currentUser = Meteor.user();
+    if(currentUser) return currentUser._id;
 }
 
 //
@@ -108,6 +129,66 @@ xc.utils.sortByDate = function (list) {
         return 0;
     }
     return list.sort(compare);
+}
+
+//
+// MENU
+//
+
+xc.menu.itemState = function(itemName){
+    // get the current route name
+    var currentRouteName = FlowRouter.current().route.name;
+
+    // if belong to projects groupe route && current item is projects
+    var projectsRoutes = ["projects","project","create/project","edit/project","createNews","editNews"];
+    if(itemName == "projects" && projectsRoutes.indexOf(currentRouteName) != -1){
+        return "active";
+    }
+
+    // if belong to projects groupe route && current item is projects
+    var membersRoutes = ["members","profile","editProfilePage"];
+    if(itemName == "members" && membersRoutes.indexOf(currentRouteName) != -1){
+        return "active";
+    }
+
+    return false;
+}
+
+xc.menu.getLinks = function(){
+    var menu = {
+        "home":  {
+            "url" : FlowRouter.path("home"),
+        },
+        "projects":  {
+            "url" : FlowRouter.path("projects"),
+        },
+        "members":  {
+            "url" : FlowRouter.path("members"),
+        },
+        "createProject":  {
+            "url" : FlowRouter.path("create/project"),
+        },
+        "profile":  {
+            "url" : "/profile/"+Meteor.userId(),
+        },
+        "login":  {
+            "url" : "/sign-in",
+        },
+        "signup":  {
+            "url" : "/sign-up",
+        },
+        "logout":  {
+            "url" : FlowRouter.path("logout")
+        }
+    }
+
+    for (var item in menu) {
+        menu[item]["state"] = xc.menu.itemState(item);
+    };
+
+    console.log(menu);
+
+    return menu;
 }
 
 console.log(xc);

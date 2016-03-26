@@ -1,38 +1,4 @@
-<template name="header">
-  <div class="header">
-    <nav class="header-nav" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="{{ menu.home }}" class="brand-logo">XinConnect</a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="{{ menu.projects }}" class="projects mdl-navigation__link">Projects</a></li>
-            <li><a href="{{ menu.members }}" class="people mdl-navigation__link">People</a></li>
-            {{#if currentUser}}
-              <li><a class="profile" style="background-image: url('{{ avatar.url }}');"></a></li>
-            {{else}}
-            <li> <a href="{{ menu.login }}" class="login button mdl-navigation__link">Login</a></li>
-            <li> <a href="{{ menu.signup }}" class="signup button mdl-navigation__link">Signup</a></li>
-            {{/if}}
-        </ul>
 
-        <ul id="nav-mobile" class="side-nav">
-            <li> <a href="{{ menu.home }}" class="mdl-navigation__link">home</a></li>
-            <li><a href="{{ menu.projects }}" class="mdl-navigation__link">projects</a></li>
-            <li><a href="{{ menu.members }}" class="mdl-navigation__link">members</a></li>
-            {{#if currentUser}}
-            <li>  <a href="{{ menu.createProject }}" class="mdl-navigation__link">Create a Project</a></li>
-            <li>  <a href="{{ menu.profile }}" class="mdl-navigation__link">Profile</a></li>
-            <li>  <a href="{{ menu.logout }}" class="mdl-navigation__link">Logout</a></li>
-            {{else}}
-            <li>  <a href="{{ menu.login }}" class="mdl-navigation__link">login</a></li>
-            {{/if}}
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse">
-          <i class="material-icons">menu</i>
-        </a>
-      </div>
-    </nav>
-  </div>
-</template>
 
 <template name="footer">
 
