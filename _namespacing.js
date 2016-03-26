@@ -53,6 +53,32 @@ xc.updates.fromProject = function(projectId){
     return result;
 };
 
+xc.updates.fromUser = function(uid){
+    var news = News.find({createdBy: uid}).fetch();
+    for (i = 0; i < news.length; ++i){
+        news[i].isNews = 1;
+        news[i].projectParent = Projects.findOne({_id: news[i].projectId});
+    }
+
+    var projects = Projects.find({createdBy: uid}).fetch();
+    for (j = 0; j < projects.length; ++j){
+        projects[j].isProject = 1;
+    }
+
+    var users = Meteor.users.findOne({_id: uid});
+    for (k = 0; k < users.length; ++k){
+        users[k].isUser = 1;
+    }
+
+    var result = news.concat(projects,users);
+
+    result = xc.utils.sortByDate(result);
+
+    console.log(result);
+    
+    return result;
+};
+
 xc.updates.getUserId = function (update){
     if(!update.isUser) return update.createdBy;
     return update._id;

@@ -166,6 +166,13 @@ var userProfileSchema = new SimpleSchema({
         label: "lastName",
         optional: true
     },
+    wechat : {
+        type : String,
+        max : 100,
+        defaultValue : '',
+        label: "wechat",
+        optional: true
+    },
     email : {
         type : String,
         regEx : SimpleSchema.RegEx.Email,
@@ -181,6 +188,16 @@ var userProfileSchema = new SimpleSchema({
         },
         optional : true,
         label: "bio"
+    },
+    status : {
+        type: String,
+        max:2500,
+        autoform: {
+            type: "textarea",
+            rows: 6
+        },
+        optional : true,
+        label: "status"
     },
     avatar: {
         type: String,

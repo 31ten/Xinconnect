@@ -30,7 +30,7 @@ Template.projectPage.helpers({
     },
     createBlockData : function () {
         return result = {
-            label : "news",
+            label : "Create a News",
             id : "news",
             url : "/create/news/"+FlowRouter.getParam('id')
         }

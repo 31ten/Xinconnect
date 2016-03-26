@@ -1,28 +1,56 @@
 <template name="profilePage">
-    <h1>PROFILE PAGE</h1>
-    <p>Id : {{user._id}}</p>
-    <p>avatar : <img src="{{avatar.url}}"/></p>
-    <p>Username : {{user.username}}</p>
-    <p>First Name : {{user.profile.firstName}}</p>
-    <p>Last Name : {{user.profile.lastName}}</p>
-    <p>Email : {{user.profile.email}}</p>
-    <p class="pre">Bio : {{user.profile.bio}}</p>
-    <p>Created At : {{user.createdAt}}</p>
-    {{#if isCurrentUser}}
-        <a href="/profile/{{user._id}}/edit">Edit your profile</a>
-    {{/if}}
+    <div class="profile template">
+        <ul>
+            
+
+
+            <div class="row card-wrapper update profileBlock xcBlock">
+                <div class="col s12 m12">
+                    <div class="card">
+                        <div class="card-content ">
+                            <div class="section-1 row">
+                                <div class="col s4 m3 profile">
+                                    <a href="/profile/{{ user._id }}" style="background-image: url('{{avatar.url}}')"></a>
+                                </div>
+                                <div class="col s8 m9 description">
+                                    <h1><a href="#">{{user.username}}</a></h1>
+                                    <h3> <span class="label">Wechat:</span> {{user.profile.wechat}} </h3>
+                                </div>
+                            </div>
+                            <div class="section-2 row description">
+                                <div class="label">Bio</div>
+                                {{ user.profile.bio }}
+                            </div>
+                            <div class="section-3 row status">
+                                <div class="label">Status</div>
+                                {{ user.profile.status }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+            {{#if isCurrentUser}}
+                {{> Template.dynamic template="createBlock" data=createBlockData }}
+            {{/if}}
+
+            {{#each userUpdates}}
+                {{> userUpdatesBlock }}
+            {{/each}}
+        </ul>
+    </div>  
 </template>
 
-<template name="editProfilePage">
-    <h1>EDIT PROFILE PAGE</h1>
+<template name="userUpdatesBlock">
+    {{#if isNews}}
+      {{> newsBlock}}
+    {{/if }}
 
-    {{#autoForm collection="Meteor.users" doc=user id="editProfileForm" type="update"}}
-        {{> afObjectField name='profile'}}
-        <button type="submit" class="btn btn-primary">Update</button>
-    {{/autoForm}}
+    {{#if isProject}}
+        {{> projectBlock}}
+    {{/if }}
 
-    <h3>PASSWORD</h3>
-    {{> atForm state="changePwd"}}
-
-
+    {{#if isUser}}
+        {{> userBlock}}
+    {{/if }}
 </template>

@@ -1,0 +1,11 @@
+<template name="editProfilePage">
+    <h1>EDIT PROFILE PAGE</h1>
+
+    {{#autoForm collection="Meteor.users" doc=user id="editProfileForm" type="update"}}
+        {{> afObjectField name='profile'}}
+        <button type="submit" class="btn btn-primary">Update</button>
+    {{/autoForm}}
+
+    <h3>PASSWORD</h3>
+    {{> atForm state="changePwd"}}
+</template>

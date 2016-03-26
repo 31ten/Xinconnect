@@ -12,7 +12,7 @@ Template.projectsPage.helpers({
     },
     createBlockData : function () {
         return result = {
-            label : "project",
+            label : "Create project",
             id : "project",
             url : "/create/project"
         }

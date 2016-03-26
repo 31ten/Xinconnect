@@ -194,7 +194,12 @@ body
 //
 // BLOCK-GENERAL
 //
+
 .xcBlock
+    margin-bottom: 0px
+    .card:hover
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.3)
+
 
 //
 // BLOCK-PROJECT
@@ -272,6 +277,42 @@ body
                         display: block
                 .description
 
+
+//
+// BLOCK-PROFILE
+//
+
+
+.profileBlock
+    .card
+        .card-content
+            padding: 0px
+            .row
+                margin: 0px
+            .label
+                color: black
+                font-weight: 600
+            .section-1
+                h1
+                    font-size: 21px
+                .profile
+                    padding: 0px
+                    a
+                        +bg()
+                        width: 120px
+                        height: 120px
+                        display: block
+                .description
+                    padding: 20px
+            .section-2.description
+                padding: 20px
+                color: rgba(0,0,0,0.8)
+            .section-3.status
+                background: $yellow
+                padding: 20px
+                color: rgba(0,0,0,0.8)
+
+            
 //
 // BLOCK-news
 //
@@ -301,6 +342,12 @@ body
             //width : 20vw
             //max-width: 20vw
 
+//
+// BLOCK-PICTURE
+//
+.pictureBlock
+    img
+        height: 190px
 //
 // PROJECTS
 //
