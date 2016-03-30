@@ -31,6 +31,12 @@ Meteor.methods({
     "userExists": function(username){
         return !!Meteor.users.findOne({username: username});
     },
+    "joinProject":function(userId){
+
+    },
+    "leaveProject":function(userId){
+        
+    }
 });
 Meteor.startup(function () {
 

@@ -1,7 +1,7 @@
 <template name="projectPage">
     {{> Template.dynamic template="projectBlock" data=project}}
 
-    {{# if belongToProject }}
+    {{# if currentUser }}
         {{> Template.dynamic template="createBlock" data=createBlockData }}
     {{/if }}
     {{> Template.dynamic template="createBlock" data=createBlockData }}
