@@ -3,7 +3,7 @@
     <nav class="header-nav" role="navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" href="{{ menu.home.url }}" class="brand-logo">XinConnect</a>
-        <ul class="right hide-on-med-and-down">
+        <ul class="right">
             <li><a href="{{ menu.projects.url }}" class="projects mdl-navigation__link {{ menu.projects.state }}">Projects</a></li>
             <li><a href="{{ menu.members.url }}" class="people mdl-navigation__link {{ menu.members.state }}">People</a></li>
             {{#if currentUser}}
@@ -31,5 +31,11 @@
         </a>
       </div>
     </nav>
+    {{#if currentUser}}{{else}}
+        <div class="buttons-cta mobile container">
+            <a href="{{ menu.login.url }}" class="login button mdl-navigation__link">Login</a>
+            <a href="{{ menu.signup.url }}" class="signup button mdl-navigation__link">Signup</a>
+        </div>
+    {{/if}}
   </div>
 </template>

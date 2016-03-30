@@ -51,9 +51,21 @@ $greyText : rgba(0,0,0,0.53)
     position: absolute
     bottom: $bottom
 
+
+
+
+
 //
 // INTERFACE
 //
+
+//MENU 
+.material-icons
+    color: grey
+    position: absolute
+    top: 2px
+    font-size: 33px 
+
 .button
     padding: 10px 15px
     border-radius: 2px
@@ -129,10 +141,12 @@ body
 .header
     nav.header-nav
         background-color: $black
+    .buttons-cta.mobile
+        display: none
     #logo-container
         font-size: 21px
         background-image: url("/images/logo.png")
-        background-position: 23px 23px
+        background-position: 23px 19px
         background-size: 22px 22px
         background-repeat: no-repeat
         padding-left: 60px
@@ -357,8 +371,9 @@ textarea.materialize-textarea
                     height: 45px
                     .join
                     .more
-
-
+                @media only screen and (max-width: 990px)
+                    .buttons-wrapper
+                        height: auto
 //
 // BLOCK-USER
 //
@@ -446,8 +461,9 @@ textarea.materialize-textarea
 // BLOCK-PICTURE
 //
 .pictureBlock
-    img
-        height: 190px
+    height: 190px
+    +bg()
+        
 //
 // PROJECTS
 //
@@ -484,3 +500,49 @@ textarea.materialize-textarea
     
 
 
+//
+// RESPONSIVE
+//
+@media only screen and (max-width: 990px)
+    #logo-container
+        position: absolute
+        left: 60px
+        top: 0px
+    .header 
+        .right
+            .projects,
+            .people
+                font-size: 0px
+                background-position: 6px 15px
+                padding: 17px
+                background-size: 22px 22px
+                background-repeat: no-repeat
+                margin-left: 14px
+                height: 56px
+            .profile,
+            .login,
+            .signup
+                display: none
+
+        .buttons-cta.mobile
+            display: block
+            height: 40px
+            position: relative
+            margin-top: 15px
+            a
+                display: block
+                width: 49%
+                float: left
+                margin: 0px
+                text-align: center
+            .login 
+                margin-right: 2%
+                background: black
+                color: white
+
+
+
+    .ctas
+        .button
+            display: block
+            margin-bottom: 10px

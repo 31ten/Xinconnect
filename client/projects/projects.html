@@ -1,6 +1,8 @@
 <template name="projectsPage">
     <ul>
-        {{> Template.dynamic template="createBlock" data=createBlockData }}
+        {{#if currentUser}}
+            {{> Template.dynamic template="createBlock" data=createBlockData }}
+        {{/if}}
 
         {{#each projects}}
             {{> projectBlock}}

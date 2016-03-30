@@ -23,6 +23,7 @@ Projects = new Meteor.Collection('projects');
 Projects.attachSchema(new SimpleSchema({
     illustration: {
         type: String,
+        optional : true,
         autoform: {
             afFieldInput: {
                 type: 'fileUpload',
