@@ -239,7 +239,12 @@ var userSchema = new SimpleSchema({
             label: false
         },
         optional: true,
-        autoValue:function(){ return Date.now() }
+        autoValue:function(){ 
+            if (this.isInsert) {
+                // only insert created at in the creation, bitch
+                return Date.now();
+            }
+        }
     },
     profile: {
         type: userProfileSchema,
