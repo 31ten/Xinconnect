@@ -4,10 +4,12 @@
             <div class="card">
                 <div class="header">EDIT YOUR PROFILE</div>
                 <div class="content">
-                    {{#autoForm collection="Meteor.users" doc=user id="editProfileForm" type="update"}}
-                        {{> afObjectField name='profile'}}
+                    
+                    {{#autoForm collection="Meteor.users" doc=user id="editProfileForm" type="update" }}
+                        {{> afObjectField name='profile' omitFields="profile.projectsSubscribed"}}
                         <button type="submit" class="btn btn-primary">Update</button>
                     {{/autoForm}}
+                    
 
                     <h3>PASSWORD</h3>
                     {{> atForm state="changePwd"}}

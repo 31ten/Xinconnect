@@ -34,6 +34,12 @@ Template.projectPage.helpers({
             id : "news",
             url : "/create/news/"+FlowRouter.getParam('id')
         }
+    },
+    currentUserBelongsToProject : function () {
+        if(xc.currentUser.getId()){
+            return xc.user.belongsToProject(xc.currentUser.getId(),FlowRouter.getParam('id'));
+        }
+        return false;
     }
 });
 

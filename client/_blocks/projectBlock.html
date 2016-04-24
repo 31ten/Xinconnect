@@ -25,7 +25,11 @@
                         </div>
                         <div class="section-5 ctas">
                             <div class="buttons-wrapper">
-                                <a class="button blue ACTION_join_project" href="#">Join the project</a>
+                                {{#if currentUserBelongsToProject}}
+                                    You subscribed to the project
+                                {{else}}
+                                    <a class="button blue ACTION_subscribe_project" href="#">Join the project</a>
+                                {{/if}}
                                 <a class="button grey" href="/project/{{ _id }}">See more updates</a>
                             </div>
                             {{#if isProjectCreator}}

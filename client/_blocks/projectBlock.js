@@ -14,5 +14,17 @@ Template.projectBlock.helpers({
     isProjectCreator : function() {
         if(xc.currentUser.getId() == this.createdBy) return true;
         return false;
+    },
+    currentUserBelongsToProject : function () {
+        if(xc.currentUser.getId()){
+            return xc.user.belongsToProject(xc.currentUser.getId(),this._id);
+        }
+        return false;
+    }
+});
+
+Template.projectBlock.events({
+    "click .ACTION_subscribe_project": function() {
+        xc.user.subscribeToProject(xc.currentUser.getId(),FlowRouter.getParam('id'));
     }
 });

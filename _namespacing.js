@@ -113,10 +113,38 @@ xc.user.getLabel = function (uid){
     if(user.profile.lastName ) return user.profile.lastName ;
 }
 
-xc.user.belongToProject = function (uid,pid){
-    var user = Meteor.users.findOne(uid);
-    var project = Project.find({_id: pid}).fetch();
-    // get 
+xc.user.belongsToProject = function (uid,pid){
+    user_check = Meteor.users.find({'profile.projectsSubscribed':{$elemMatch: {projectId: pid}}}).fetch();
+    console.log(user_check);
+    if(typeof user_check[0] == 'undefined'){
+        console.log("xc.user.belongsToProject "+uid+" - "+pid +" : false");
+        return false;
+    }else{
+        console.log("xc.user.belongsToProject "+uid+" - "+pid +" : true");
+        return true;
+    }
+}
+
+xc.user.subscribeToProject = function (uid,pid){
+    var confirm_subscription_message = "Do you want to subscribe to this project? An introduction email will be sent to the current project members to welcome you!";
+
+    if (confirm(confirm_subscription_message)) {
+        console.log("1");
+        Meteor.call("user/subscribe/project",uid,pid,function(err,res){
+            if(res == "profile_to_fill"){
+                FlowRouter.go('/profile/'+uid+'/edit');
+                alert("As we will send an email of introduction of you to all the current members of that project,please fill your bio and status before subscribing to a project.");
+            }
+            else if(res == "already_subscribed"){
+                alert("you already subscribed to the project");
+            }
+            else{
+                alert("you successfully subscribed to the project! Check your mailbox for updates on the project");
+            }
+        });
+    }else{
+        console.log("2");
+    }
 }
 
 
@@ -125,17 +153,20 @@ xc.user.belongToProject = function (uid,pid){
 //
 xc.currentUser.getPict = function () {
     var currentUser = Meteor.user();
-    return xc.user.getPict(currentUser._id);
+    if(currentUser) return xc.user.getPict(currentUser._id);
+    return false;
 }
 
 xc.currentUser.get = function () {
     var currentUser = Meteor.user();
-    return currentUser;
+    if(currentUser) return currentUser;
+    return false;
 }
 
 xc.currentUser.getId = function () {
     var currentUser = Meteor.user();
     if(currentUser) return currentUser._id;
+    return false;
 }
 
 //

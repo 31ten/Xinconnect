@@ -19,8 +19,6 @@ Template.header.helpers({
         return xc.currentUser.getId();
     },
     menu: function () {
-        console.log("HEADER HELPER MENU Am I reactive?");
-        console.log(menu);
         return Session.get("menu");
     }
 });

@@ -67,6 +67,13 @@ Projects.attachSchema(new SimpleSchema({
         type: String,
         optional: true
     }*/
+    usersSubscribed: {
+        type: [Object],
+        optional : true
+    },
+    "usersSubscribed.$.userId": {
+        type: String
+    },
     createdBy: {
         type: String,
         regEx: SimpleSchema.RegEx.Id,
@@ -199,6 +206,13 @@ var userProfileSchema = new SimpleSchema({
         },
         optional : true,
         label: "status"
+    },
+    projectsSubscribed: {
+        type: [Object],
+        optional : true
+    },
+    "projectsSubscribed.$.projectId": {
+        type: String
     },
     avatar: {
         type: String,
